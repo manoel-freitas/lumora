@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { z } from 'zod'
-import { createCharacterSchema, updateCharacterSchema, upsertInfluencerProfileSchema } from '@lumora/shared'
+import { createCharacterSchema, updateCharacterSchema } from '@lumora/shared'
 import type { AppEnv } from '../../infra/auth'
 import { notFound, parseJson } from '../../infra/http'
 import {
@@ -13,10 +13,6 @@ import {
   setPrimaryCharacterPhoto,
   updateCharacter,
 } from './character.repository'
-import {
-  findPersonaByCharacterId,
-  upsertPersonaForCharacter,
-} from '../personas/persona.repository'
 
 const addPhotoSchema = z.object({
   r2Key: z.string().min(1).max(500),
@@ -47,25 +43,6 @@ charactersRouter.get('/:id', async (c) => {
   const character = await findCharacterById(c.get('workspaceId'), c.req.param('id'))
   if (!character) return notFound(c, 'Character')
   return c.json(character)
-})
-
-charactersRouter.get('/:id/persona', async (c) => {
-  const character = await findCharacterById(c.get('workspaceId'), c.req.param('id'))
-  if (!character) return notFound(c, 'Character')
-
-  const persona = await findPersonaByCharacterId(c.get('workspaceId'), c.req.param('id'))
-  return c.json({ persona })
-})
-
-charactersRouter.put('/:id/persona', async (c) => {
-  const character = await findCharacterById(c.get('workspaceId'), c.req.param('id'))
-  if (!character) return notFound(c, 'Character')
-
-  const input = await parseJson(c, upsertInfluencerProfileSchema.omit({ characterId: true }))
-  if (input instanceof Response) return input
-
-  const persona = await upsertPersonaForCharacter(c.get('workspaceId'), c.req.param('id'), input)
-  return c.json(persona)
 })
 
 charactersRouter.put('/:id', async (c) => {
