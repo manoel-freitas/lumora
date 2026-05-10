@@ -1,12 +1,11 @@
 import { and, desc, eq, sql, type SQL } from 'drizzle-orm'
 import { db } from '../../infra/db'
-import { contentAssets, contentCampaigns, generations, influencerProfiles, moderationResults } from '../../db/schema'
+import { contentAssets, contentCampaigns, generations, moderationResults } from '../../db/schema'
 
 export type GalleryFilters = {
   page?: number
   limit?: number
   characterId?: string
-  influencerProfileId?: string
   campaignId?: string
   type?: 'image' | 'video'
   platform?: 'instagram' | 'tiktok' | 'x' | 'youtube_shorts' | 'onlyfans' | 'privacy' | 'other'
@@ -19,7 +18,6 @@ function whereClauses(workspaceId: string, filters: GalleryFilters) {
   const clauses: SQL[] = [eq(generations.workspaceId, workspaceId)]
   clauses.push(eq(generations.status, 'completed'))
   if (filters.characterId) clauses.push(eq(generations.characterId, filters.characterId))
-  if (filters.influencerProfileId) clauses.push(eq(generations.influencerProfileId, filters.influencerProfileId))
   if (filters.campaignId) clauses.push(eq(generations.campaignId, filters.campaignId))
   if (filters.type) clauses.push(eq(generations.type, filters.type))
   if (filters.platform) clauses.push(eq(generations.platform, filters.platform))
@@ -38,13 +36,11 @@ export async function listGallery(workspaceId: string, filters: GalleryFilters) 
   const items = await db.select({
     generation: generations,
     asset: contentAssets,
-    persona: influencerProfiles,
     campaign: contentCampaigns,
     moderation: moderationResults,
   })
     .from(generations)
     .leftJoin(contentAssets, eq(contentAssets.generationId, generations.id))
-    .leftJoin(influencerProfiles, eq(influencerProfiles.id, generations.influencerProfileId))
     .leftJoin(contentCampaigns, eq(contentCampaigns.id, generations.campaignId))
     .leftJoin(moderationResults, eq(moderationResults.generationId, generations.id))
     .where(and(...clauses))
@@ -65,13 +61,11 @@ export async function findGalleryItem(workspaceId: string, id: string) {
   const [item] = await db.select({
     generation: generations,
     asset: contentAssets,
-    persona: influencerProfiles,
     campaign: contentCampaigns,
     moderation: moderationResults,
   })
     .from(generations)
     .leftJoin(contentAssets, eq(contentAssets.generationId, generations.id))
-    .leftJoin(influencerProfiles, eq(influencerProfiles.id, generations.influencerProfileId))
     .leftJoin(contentCampaigns, eq(contentCampaigns.id, generations.campaignId))
     .leftJoin(moderationResults, eq(moderationResults.generationId, generations.id))
     .where(and(eq(generations.workspaceId, workspaceId), eq(generations.id, id)))
