@@ -1,0 +1,13 @@
+{
+  "type": "EFFECT_RESOLVED",
+  "recordedAt": "2026-05-10T14:31:49.291Z",
+  "data": {
+    "harness": "claude-code",
+    "effectId": "01KR94QZJ0PX4SZTNBSRVN4DC2",
+    "status": "ok",
+    "resultRef": "tasks/01KR94QZJ0PX4SZTNBSRVN4DC2/result.json",
+    "startedAt": "2026-05-10T14:31:49.277Z",
+    "finishedAt": "2026-05-10T14:31:49.277Z"
+  },
+  "checksum": "5c769a0c6d6a85e2870ea9e13ff24d7950a7c5f2bbfad1291130e22d03c84f38"
+}

@@ -1,0 +1,6 @@
+{
+  "existingProfile": null,
+  "configDirExists": true,
+  "configFiles": ["active/", "logs/", "process-library/", "state/"],
+  "isFirstRun": true
+}

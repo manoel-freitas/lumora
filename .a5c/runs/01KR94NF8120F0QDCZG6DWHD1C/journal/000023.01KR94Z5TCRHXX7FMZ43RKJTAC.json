@@ -1,0 +1,22 @@
+{
+  "type": "EFFECT_REQUESTED",
+  "recordedAt": "2026-05-10T14:34:26.508Z",
+  "data": {
+    "harness": "claude-code",
+    "effectId": "01KR94Z5T0VQV63K495DY9YKKK",
+    "invocationKey": "cradle/user-install:S000008:save-profile",
+    "invocationHash": "c64861b7291cc3d8e979b281888e0657c683d3c3d75860b532f3307256ed960b",
+    "stepId": "S000008",
+    "taskId": "save-profile",
+    "kind": "agent",
+    "label": "agent",
+    "taskDefRef": "tasks/01KR94Z5T0VQV63K495DY9YKKK/task.json",
+    "labels": [
+      "agent",
+      "cradle",
+      "save",
+      "atomic"
+    ]
+  },
+  "checksum": "5d598dd9e28b0448be18b54f4ff2fed506f737947d7ea96e4b12ee8a94954a17"
+}

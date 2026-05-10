@@ -1,0 +1,22 @@
+{
+  "type": "EFFECT_REQUESTED",
+  "recordedAt": "2026-05-10T14:31:58.086Z",
+  "data": {
+    "harness": "claude-code",
+    "effectId": "01KR94TMVTA2T0KT8XCN22H5EC",
+    "invocationKey": "cradle/user-install:S000004:build-profile",
+    "invocationHash": "aca4d7b0badc3bcf15ae78844c510761dccaecd41897bdbab4b9d4ebfea56ac2",
+    "stepId": "S000004",
+    "taskId": "build-profile",
+    "kind": "agent",
+    "label": "agent",
+    "taskDefRef": "tasks/01KR94TMVTA2T0KT8XCN22H5EC/task.json",
+    "labels": [
+      "agent",
+      "cradle",
+      "profile",
+      "build"
+    ]
+  },
+  "checksum": "dbef13addd8a86eea6e09bf6f4f615baa295121c9b6391f571479778cdb2ba7d"
+}

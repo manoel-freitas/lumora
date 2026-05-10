@@ -1,0 +1,21 @@
+{
+  "type": "EFFECT_REQUESTED",
+  "recordedAt": "2026-05-10T14:33:22.398Z",
+  "data": {
+    "harness": "claude-code",
+    "effectId": "01KR94X76J7ENSW56XGQ53NJQD",
+    "invocationKey": "cradle/user-install:S000006:configure-user",
+    "invocationHash": "330efb3ea093354645cde5ffde91837a60f3bda6bf715dee3ffb3d2f42386ab9",
+    "stepId": "S000006",
+    "taskId": "configure-user",
+    "kind": "agent",
+    "label": "agent",
+    "taskDefRef": "tasks/01KR94X76J7ENSW56XGQ53NJQD/task.json",
+    "labels": [
+      "agent",
+      "cradle",
+      "configuration"
+    ]
+  },
+  "checksum": "2ea641f742474818ecb3933a752fc75121a912e622b8c4cba4007317d89c23ca"
+}

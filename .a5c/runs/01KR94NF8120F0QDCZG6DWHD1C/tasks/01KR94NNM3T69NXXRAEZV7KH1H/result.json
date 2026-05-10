@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "2026.01.results-v1",
+  "effectId": "01KR94NNM3T69NXXRAEZV7KH1H",
+  "taskId": "check-existing-setup",
+  "invocationKey": "cradle/user-install:S000001:check-existing-setup",
+  "status": "ok",
+  "result": {
+    "configDirExists": true,
+    "configFiles": [
+      "active/",
+      "logs/",
+      "process-library/",
+      "state/"
+    ],
+    "existingProfile": null,
+    "isFirstRun": true
+  },
+  "startedAt": "2026-05-10T14:29:41.019Z",
+  "finishedAt": "2026-05-10T14:29:41.019Z",
+  "value": {
+    "configDirExists": true,
+    "configFiles": [
+      "active/",
+      "logs/",
+      "process-library/",
+      "state/"
+    ],
+    "existingProfile": null,
+    "isFirstRun": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "2026.01.results-v1",
+  "effectId": "01KR94XY5J9D0F588KZ43XTQF9",
+  "taskId": "__sdk.breakpoint",
+  "invocationKey": "cradle/user-install:S000007:__sdk.breakpoint",
+  "status": "ok",
+  "result": {
+    "approved": true,
+    "response": "Approve — save profile"
+  },
+  "startedAt": "2026-05-10T14:34:13.876Z",
+  "finishedAt": "2026-05-10T14:34:13.876Z",
+  "value": {
+    "approved": true,
+    "response": "Approve — save profile"
+  }
+}

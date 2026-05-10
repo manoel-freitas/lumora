@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "2026.01.results-v1",
+  "effectId": "01KR94W5FE5R4WMDFMF4R0QZGH",
+  "taskId": "tool-selection",
+  "invocationKey": "cradle/user-install:S000005:tool-selection",
+  "status": "ok",
+  "result": {
+    "justifications": {
+      "babysitter:project-install": "Will install babysitter on future projects",
+      "babysitter:yolo": "Low breakpoint tolerance — yolo mode suits semi-autonomous expert users",
+      "caveman": "Matches concise+technical communication preference",
+      "methodologies/tdd-quality-convergence": "Quality and productivity goals align with TDD convergence methodology",
+      "review": "Quality-focused workflow needs PR review tooling",
+      "security-review": "Security awareness for production-grade systems",
+      "simplify": "Code quality goal aligns with simplification reviews",
+      "specializations/backend-development": "Expert-level backend/API development",
+      "specializations/devops-sre-platform": "Advanced DevOps/CI/CD experience",
+      "specializations/qa-testing-automation": "Quality-focused goals, benefits from automated test processes",
+      "specializations/software-architecture": "Senior experience warrants architecture-level process support",
+      "specializations/web-development": "Primary specialty with 12 years full-stack experience"
+    },
+    "prioritized": {
+      "mustHave": [
+        "specializations/web-development",
+        "specializations/backend-development",
+        "methodologies/tdd-quality-convergence",
+        "caveman",
+        "review"
+      ],
+      "niceToHave": [
+        "specializations/devops-sre-platform",
+        "specializations/software-architecture",
+        "simplify",
+        "security-review",
+        "babysitter:yolo"
+      ]
+    },
+    "recommendedAgents": [
+      "general-purpose",
+      "cavecrew-builder",
+      "cavecrew-investigator",
+      "cavecrew-reviewer"
+    ],
+    "recommendedMethodology": "tdd-quality-convergence",
+    "recommendedProcesses": [
+      "specializations/web-development",
+      "specializations/backend-development",
+      "specializations/devops-sre-platform",
+      "specializations/qa-testing-automation",
+      "specializations/software-architecture",
+      "methodologies/tdd-quality-convergence"
+    ],
+    "recommendedSkills": [
+      "caveman",
+      "simplify",
+      "review",
+      "security-review",
+      "babysitter:yolo",
+      "babysitter:project-install"
+    ]
+  },
+  "startedAt": "2026-05-10T14:33:13.146Z",
+  "finishedAt": "2026-05-10T14:33:13.146Z",
+  "value": {
+    "justifications": {
+      "babysitter:project-install": "Will install babysitter on future projects",
+      "babysitter:yolo": "Low breakpoint tolerance — yolo mode suits semi-autonomous expert users",
+      "caveman": "Matches concise+technical communication preference",
+      "methodologies/tdd-quality-convergence": "Quality and productivity goals align with TDD convergence methodology",
+      "review": "Quality-focused workflow needs PR review tooling",
+      "security-review": "Security awareness for production-grade systems",
+      "simplify": "Code quality goal aligns with simplification reviews",
+      "specializations/backend-development": "Expert-level backend/API development",
+      "specializations/devops-sre-platform": "Advanced DevOps/CI/CD experience",
+      "specializations/qa-testing-automation": "Quality-focused goals, benefits from automated test processes",
+      "specializations/software-architecture": "Senior experience warrants architecture-level process support",
+      "specializations/web-development": "Primary specialty with 12 years full-stack experience"
+    },
+    "prioritized": {
+      "mustHave": [
+        "specializations/web-development",
+        "specializations/backend-development",
+        "methodologies/tdd-quality-convergence",
+        "caveman",
+        "review"
+      ],
+      "niceToHave": [
+        "specializations/devops-sre-platform",
+        "specializations/software-architecture",
+        "simplify",
+        "security-review",
+        "babysitter:yolo"
+      ]
+    },
+    "recommendedAgents": [
+      "general-purpose",
+      "cavecrew-builder",
+      "cavecrew-investigator",
+      "cavecrew-reviewer"
+    ],
+    "recommendedMethodology": "tdd-quality-convergence",
+    "recommendedProcesses": [
+      "specializations/web-development",
+      "specializations/backend-development",
+      "specializations/devops-sre-platform",
+      "specializations/qa-testing-automation",
+      "specializations/software-architecture",
+      "methodologies/tdd-quality-convergence"
+    ],
+    "recommendedSkills": [
+      "caveman",
+      "simplify",
+      "review",
+      "security-review",
+      "babysitter:yolo",
+      "babysitter:project-install"
+    ]
+  }
+}

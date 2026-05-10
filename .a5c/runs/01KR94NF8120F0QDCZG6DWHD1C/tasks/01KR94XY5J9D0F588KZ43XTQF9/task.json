@@ -1,0 +1,53 @@
+{
+  "kind": "breakpoint",
+  "metadata": {
+    "label": "breakpoint",
+    "payload": {
+      "context": {
+        "files": [
+          {
+            "format": "json",
+            "label": "Full Profile JSON",
+            "path": "artifacts/user-profile-preview.json"
+          },
+          {
+            "format": "json",
+            "label": "Tool Recommendations",
+            "path": "artifacts/tool-recommendations.json"
+          }
+        ]
+      },
+      "question": "Please review your complete user profile before we save it.\n\n**Name**: Manoel\n**Specialties**: web-development, devops-sre-platform, backend-development, ux-ui-design\n**Goals**: Ship high-quality software efficiently; Improve development productivity and code quality\n**Breakpoint Tolerance**: low\n**Autonomy Level**: semi-autonomous\n\n**Recommended Tools**: caveman, simplify, review, security-review, babysitter:yolo, babysitter:project-install\n**Recommended Processes**: specializations/web-development, specializations/backend-development, specializations/devops-sre-platform, specializations/qa-testing-automation, specializations/software-architecture, methodologies/tdd-quality-convergence\n\n**Config Path**: /home/manoelfreitas/.a5c/config.json\n\nApprove to save this profile, or provide corrections.",
+      "title": "Profile Review"
+    },
+    "requestedAt": "2026-05-10T14:33:45.906Z"
+  },
+  "title": "breakpoint",
+  "schemaVersion": "2026.01.tasks-v1",
+  "effectId": "01KR94XY5J9D0F588KZ43XTQF9",
+  "taskId": "__sdk.breakpoint",
+  "invocationKey": "cradle/user-install:S000007:__sdk.breakpoint",
+  "stepId": "S000007",
+  "inputs": {
+    "label": "breakpoint",
+    "payload": {
+      "context": {
+        "files": [
+          {
+            "format": "json",
+            "label": "Full Profile JSON",
+            "path": "artifacts/user-profile-preview.json"
+          },
+          {
+            "format": "json",
+            "label": "Tool Recommendations",
+            "path": "artifacts/tool-recommendations.json"
+          }
+        ]
+      },
+      "question": "Please review your complete user profile before we save it.\n\n**Name**: Manoel\n**Specialties**: web-development, devops-sre-platform, backend-development, ux-ui-design\n**Goals**: Ship high-quality software efficiently; Improve development productivity and code quality\n**Breakpoint Tolerance**: low\n**Autonomy Level**: semi-autonomous\n\n**Recommended Tools**: caveman, simplify, review, security-review, babysitter:yolo, babysitter:project-install\n**Recommended Processes**: specializations/web-development, specializations/backend-development, specializations/devops-sre-platform, specializations/qa-testing-automation, specializations/software-architecture, methodologies/tdd-quality-convergence\n\n**Config Path**: /home/manoelfreitas/.a5c/config.json\n\nApprove to save this profile, or provide corrections.",
+      "title": "Profile Review"
+    },
+    "requestedAt": "2026-05-10T14:33:45.906Z"
+  }
+}

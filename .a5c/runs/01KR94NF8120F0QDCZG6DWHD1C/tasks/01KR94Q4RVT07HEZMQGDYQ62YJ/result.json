@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "2026.01.results-v1",
+  "effectId": "01KR94Q4RVT07HEZMQGDYQ62YJ",
+  "taskId": "environment-check",
+  "invocationKey": "cradle/user-install:S000002:environment-check",
+  "status": "ok",
+  "result": {
+    "nodeVersion": "v22.22.0",
+    "npmVersion": "10.9.4",
+    "platform": "linux",
+    "toolsInstalled": [
+      {
+        "name": "@a5c-ai/babysitter-sdk",
+        "version": "0.0.187",
+        "wasAlreadyInstalled": true
+      },
+      {
+        "name": "jq",
+        "version": "1.8.1",
+        "wasAlreadyInstalled": true
+      }
+    ],
+    "toolsMissing": []
+  },
+  "startedAt": "2026-05-10T14:30:20.003Z",
+  "finishedAt": "2026-05-10T14:30:20.003Z",
+  "value": {
+    "nodeVersion": "v22.22.0",
+    "npmVersion": "10.9.4",
+    "platform": "linux",
+    "toolsInstalled": [
+      {
+        "name": "@a5c-ai/babysitter-sdk",
+        "version": "0.0.187",
+        "wasAlreadyInstalled": true
+      },
+      {
+        "name": "jq",
+        "version": "1.8.1",
+        "wasAlreadyInstalled": true
+      }
+    ],
+    "toolsMissing": []
+  }
+}

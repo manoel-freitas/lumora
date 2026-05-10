@@ -1,0 +1,22 @@
+{
+  "type": "EFFECT_REQUESTED",
+  "recordedAt": "2026-05-10T14:30:03.304Z",
+  "data": {
+    "harness": "claude-code",
+    "effectId": "01KR94Q4RVT07HEZMQGDYQ62YJ",
+    "invocationKey": "cradle/user-install:S000002:environment-check",
+    "invocationHash": "0a8f090df3141a86f547a6b2ee78930bddfae972461a56e9e0daa511388f2263",
+    "stepId": "S000002",
+    "taskId": "environment-check",
+    "kind": "agent",
+    "label": "agent",
+    "taskDefRef": "tasks/01KR94Q4RVT07HEZMQGDYQ62YJ/task.json",
+    "labels": [
+      "agent",
+      "cradle",
+      "environment",
+      "install"
+    ]
+  },
+  "checksum": "f037e66582d3d3ee33734f9c97b3736cfb792bce4438c34bcc786cc7f2bb7f73"
+}

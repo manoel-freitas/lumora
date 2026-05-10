@@ -1,0 +1,22 @@
+{
+  "type": "EFFECT_REQUESTED",
+  "recordedAt": "2026-05-10T14:32:47.868Z",
+  "data": {
+    "harness": "claude-code",
+    "effectId": "01KR94W5FE5R4WMDFMF4R0QZGH",
+    "invocationKey": "cradle/user-install:S000005:tool-selection",
+    "invocationHash": "52676e90dced414ff43f6e3b1e7d0c4a2617e9828d23594f04e97d1f14f8bc93",
+    "stepId": "S000005",
+    "taskId": "tool-selection",
+    "kind": "agent",
+    "label": "agent",
+    "taskDefRef": "tasks/01KR94W5FE5R4WMDFMF4R0QZGH/task.json",
+    "labels": [
+      "agent",
+      "cradle",
+      "tools",
+      "selection"
+    ]
+  },
+  "checksum": "0118e2c8974fd6ee598072c626d05137060952e4914a0ca2d4e6741acbfc5374"
+}

@@ -1,0 +1,98 @@
+{
+  "agent": {
+    "name": "general-purpose",
+    "outputSchema": {
+      "properties": {
+        "nodeVersion": {
+          "type": "string"
+        },
+        "npmVersion": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "toolsInstalled": {
+          "items": {
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "wasAlreadyInstalled": {
+                "type": "boolean"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "toolsMissing": {
+          "items": {
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "toolsInstalled",
+        "platform"
+      ],
+      "type": "object"
+    },
+    "prompt": {
+      "context": {
+        "existingProfile": null,
+        "requiredTools": [
+          "babysitter-sdk (npm package @a5c-ai/babysitter-sdk)",
+          "jq (command-line JSON processor)"
+        ]
+      },
+      "instructions": [
+        "Check if @a5c-ai/babysitter-sdk is installed globally or in the local project (npm list -g @a5c-ai/babysitter-sdk or check node_modules)",
+        "Check if jq is installed (run: jq --version)",
+        "Check if node/npm are available and their versions",
+        "For any missing tools, install them:",
+        "  - jq: use the appropriate package manager for the OS (brew install jq, apt-get install jq, choco install jq, etc.)",
+        "  - babysitter-sdk: npm install -g @a5c-ai/babysitter-sdk (if not already present)",
+        "Verify installations succeeded",
+        "Report the versions of all installed tools",
+        "Do NOT fail if jq cannot be installed - it is optional but recommended"
+      ],
+      "outputFormat": "JSON with toolsInstalled (array of {name, version, wasAlreadyInstalled}), toolsMissing (array of {name, reason}), nodeVersion (string), npmVersion (string), platform (string)",
+      "role": "DevOps engineer and system administrator",
+      "task": "Verify that required dependencies are installed and install any missing ones"
+    }
+  },
+  "description": "Check that babysitter SDK and jq are installed, install if missing",
+  "io": {
+    "inputJsonPath": "tasks/01KR94Q4RVT07HEZMQGDYQ62YJ/input.json",
+    "outputJsonPath": "tasks/01KR94Q4RVT07HEZMQGDYQ62YJ/result.json"
+  },
+  "kind": "agent",
+  "labels": [
+    "agent",
+    "cradle",
+    "environment",
+    "install"
+  ],
+  "title": "Verify and install dependencies",
+  "schemaVersion": "2026.01.tasks-v1",
+  "effectId": "01KR94Q4RVT07HEZMQGDYQ62YJ",
+  "taskId": "environment-check",
+  "invocationKey": "cradle/user-install:S000002:environment-check",
+  "stepId": "S000002",
+  "inputs": {
+    "existingProfile": null
+  }
+}

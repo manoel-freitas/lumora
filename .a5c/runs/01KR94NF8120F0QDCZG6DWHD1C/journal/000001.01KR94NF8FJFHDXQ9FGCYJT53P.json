@@ -1,0 +1,16 @@
+{
+  "type": "RUN_CREATED",
+  "recordedAt": "2026-05-10T14:29:08.495Z",
+  "data": {
+    "runId": "01KR94NF8120F0QDCZG6DWHD1C",
+    "processId": "cradle/user-install",
+    "entrypoint": {
+      "importPath": "../../../../../.a5c/process-library/babysitter-repo/library/cradle/user-install.js",
+      "exportName": "process"
+    },
+    "harness": "claude-code",
+    "inputsRef": "inputs.json",
+    "prompt": "user-install"
+  },
+  "checksum": "c8415e5cb0bec8de8f39e0e83631cfbe10f9a0ff34e196c6a7a3f8731fd03460"
+}

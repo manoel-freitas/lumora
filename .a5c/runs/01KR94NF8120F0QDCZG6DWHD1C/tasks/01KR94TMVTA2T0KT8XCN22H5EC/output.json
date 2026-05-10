@@ -1,0 +1,76 @@
+{
+  "profile": {
+    "name": "Manoel",
+    "specialties": [
+      {"domain": "web-development", "subdomains": ["full-stack", "frontend", "backend"], "yearsActive": 12},
+      {"domain": "devops-sre-platform", "subdomains": ["CI/CD", "cloud", "infrastructure"], "yearsActive": 8},
+      {"domain": "backend-development", "subdomains": ["APIs", "services", "databases"], "yearsActive": 12},
+      {"domain": "ux-ui-design", "subdomains": ["UI components", "design systems"], "yearsActive": 8}
+    ],
+    "expertiseLevels": {
+      "TypeScript": {"level": "expert", "confidence": 0.95, "lastAssessed": "2026-05-10T14:32:00.000Z"},
+      "JavaScript": {"level": "expert", "confidence": 0.95, "lastAssessed": "2026-05-10T14:32:00.000Z"},
+      "Python": {"level": "advanced", "confidence": 0.85, "lastAssessed": "2026-05-10T14:32:00.000Z"},
+      "full-stack web": {"level": "expert", "confidence": 0.95, "lastAssessed": "2026-05-10T14:32:00.000Z"},
+      "DevOps": {"level": "advanced", "confidence": 0.80, "lastAssessed": "2026-05-10T14:32:00.000Z"},
+      "frontend": {"level": "expert", "confidence": 0.90, "lastAssessed": "2026-05-10T14:32:00.000Z"},
+      "backend/API": {"level": "expert", "confidence": 0.90, "lastAssessed": "2026-05-10T14:32:00.000Z"}
+    },
+    "goals": [
+      {"id": "goal-quality-0", "description": "Ship high-quality software efficiently", "category": "quality", "priority": "high", "status": "active"},
+      {"id": "goal-productivity-0", "description": "Improve development productivity and code quality", "category": "productivity", "priority": "high", "status": "active"}
+    ],
+    "preferences": {
+      "verbosity": "concise",
+      "autonomyLevel": "semi-autonomous",
+      "riskTolerance": "moderate",
+      "workingHours": {"timezone": "America/Sao_Paulo"},
+      "learningStyle": "hands-on"
+    },
+    "toolPreferences": {
+      "editor": "VS Code",
+      "shell": "zsh",
+      "terminal": "zsh",
+      "packageManagers": ["npm", "pnpm"],
+      "languages": ["TypeScript", "JavaScript", "Python"],
+      "operatingSystem": "Linux"
+    },
+    "breakpointTolerance": {
+      "global": "low",
+      "skipBreakpointsForKnownPatterns": true,
+      "alwaysBreakOn": ["destructive-git", "deploy", "database-migration"]
+    },
+    "communicationStyle": {
+      "tone": "technical",
+      "language": "en",
+      "useEmojis": false,
+      "explanationDepth": "concise",
+      "preferredResponseFormat": "markdown"
+    },
+    "socialProfiles": [],
+    "experience": {
+      "totalYearsProfessional": 12,
+      "industries": ["software"],
+      "previousRoles": [],
+      "education": [],
+      "certifications": []
+    },
+    "externalIntegrations": [
+      {"type": "ticketing", "platform": "Linear", "enabled": true}
+    ],
+    "installedPlugins": ["a5c-ai/babysitter"],
+    "installedSkills": [],
+    "installedAgents": [],
+    "createdAt": "2026-05-10T14:32:00.000Z",
+    "updatedAt": "2026-05-10T14:32:00.000Z",
+    "version": 1
+  },
+  "availableSpecializations": [
+    "web-development", "backend-development", "devops-sre-platform", "ux-ui-design",
+    "data-science-ml", "data-engineering-analytics", "software-architecture",
+    "qa-testing-automation", "product-management", "technical-documentation",
+    "ai-agents-conversational", "cli-mcp-development", "security-compliance",
+    "mobile-development", "performance-optimization"
+  ],
+  "changesSummary": "Fresh profile created for Manoel: expert full-stack/TS/JS engineer, 12+ years, Linux/VS Code/zsh, low breakpoint tolerance, concise+technical communication style."
+}

@@ -1,0 +1,19 @@
+{
+  "type": "EFFECT_REQUESTED",
+  "recordedAt": "2026-05-10T14:30:30.731Z",
+  "data": {
+    "harness": "claude-code",
+    "effectId": "01KR94QZJ0PX4SZTNBSRVN4DC2",
+    "invocationKey": "cradle/user-install:S000003:__sdk.breakpoint",
+    "invocationHash": "473889af7c29d0d5c189756b5d7485f89455677cab04664c9d7b46b4697f2ded",
+    "stepId": "S000003",
+    "taskId": "__sdk.breakpoint",
+    "kind": "breakpoint",
+    "label": "breakpoint",
+    "taskDefRef": "tasks/01KR94QZJ0PX4SZTNBSRVN4DC2/task.json",
+    "labels": [
+      "breakpoint"
+    ]
+  },
+  "checksum": "05a480713a8bfad7259b337895cc4a96e93585aa6598b238d07c88e4f8e7a79b"
+}

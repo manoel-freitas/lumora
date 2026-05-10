@@ -1,0 +1,55 @@
+{
+  "recommendedProcesses": [
+    "specializations/web-development",
+    "specializations/backend-development",
+    "specializations/devops-sre-platform",
+    "specializations/qa-testing-automation",
+    "specializations/software-architecture",
+    "methodologies/tdd-quality-convergence"
+  ],
+  "recommendedSkills": [
+    "caveman",
+    "simplify",
+    "review",
+    "security-review",
+    "babysitter:yolo",
+    "babysitter:project-install"
+  ],
+  "recommendedAgents": [
+    "general-purpose",
+    "cavecrew-builder",
+    "cavecrew-investigator",
+    "cavecrew-reviewer"
+  ],
+  "recommendedMethodology": "tdd-quality-convergence",
+  "justifications": {
+    "specializations/web-development": "Primary specialty with 12 years full-stack experience",
+    "specializations/backend-development": "Expert-level backend/API development",
+    "specializations/devops-sre-platform": "Advanced DevOps/CI/CD experience",
+    "specializations/qa-testing-automation": "Quality-focused goals, benefits from automated test processes",
+    "specializations/software-architecture": "Senior experience warrants architecture-level process support",
+    "methodologies/tdd-quality-convergence": "Quality and productivity goals align with TDD convergence methodology",
+    "caveman": "Matches concise+technical communication preference",
+    "simplify": "Code quality goal aligns with simplification reviews",
+    "review": "Quality-focused workflow needs PR review tooling",
+    "security-review": "Security awareness for production-grade systems",
+    "babysitter:yolo": "Low breakpoint tolerance — yolo mode suits semi-autonomous expert users",
+    "babysitter:project-install": "Will install babysitter on future projects"
+  },
+  "prioritized": {
+    "mustHave": [
+      "specializations/web-development",
+      "specializations/backend-development",
+      "methodologies/tdd-quality-convergence",
+      "caveman",
+      "review"
+    ],
+    "niceToHave": [
+      "specializations/devops-sre-platform",
+      "specializations/software-architecture",
+      "simplify",
+      "security-review",
+      "babysitter:yolo"
+    ]
+  }
+}

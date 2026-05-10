@@ -1,0 +1,502 @@
+{
+  "agent": {
+    "name": "general-purpose",
+    "outputSchema": {
+      "properties": {
+        "configCreated": {
+          "type": "boolean"
+        },
+        "configDir": {
+          "type": "string"
+        },
+        "configPath": {
+          "type": "string"
+        },
+        "existingConfigPreserved": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "plannedConfig": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "configPath",
+        "configDir",
+        "plannedConfig"
+      ],
+      "type": "object"
+    },
+    "prompt": {
+      "context": {
+        "defaultConfigDir": "~/.a5c/",
+        "profile": {
+          "breakpointTolerance": {
+            "alwaysBreakOn": [
+              "destructive-git",
+              "deploy",
+              "database-migration"
+            ],
+            "global": "low",
+            "skipBreakpointsForKnownPatterns": true
+          },
+          "communicationStyle": {
+            "explanationDepth": "concise",
+            "language": "en",
+            "preferredResponseFormat": "markdown",
+            "tone": "technical",
+            "useEmojis": false
+          },
+          "createdAt": "2026-05-10T14:32:00.000Z",
+          "experience": {
+            "certifications": [],
+            "education": [],
+            "industries": [
+              "software"
+            ],
+            "previousRoles": [],
+            "totalYearsProfessional": 12
+          },
+          "expertiseLevels": {
+            "backend/API": {
+              "confidence": 0.9,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "expert"
+            },
+            "DevOps": {
+              "confidence": 0.8,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "advanced"
+            },
+            "frontend": {
+              "confidence": 0.9,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "expert"
+            },
+            "full-stack web": {
+              "confidence": 0.95,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "expert"
+            },
+            "JavaScript": {
+              "confidence": 0.95,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "expert"
+            },
+            "Python": {
+              "confidence": 0.85,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "advanced"
+            },
+            "TypeScript": {
+              "confidence": 0.95,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "expert"
+            }
+          },
+          "externalIntegrations": [
+            {
+              "enabled": true,
+              "platform": "Linear",
+              "type": "ticketing"
+            }
+          ],
+          "goals": [
+            {
+              "category": "quality",
+              "description": "Ship high-quality software efficiently",
+              "id": "goal-quality-0",
+              "priority": "high",
+              "status": "active"
+            },
+            {
+              "category": "productivity",
+              "description": "Improve development productivity and code quality",
+              "id": "goal-productivity-0",
+              "priority": "high",
+              "status": "active"
+            }
+          ],
+          "installedAgents": [],
+          "installedPlugins": [
+            "a5c-ai/babysitter"
+          ],
+          "installedSkills": [],
+          "name": "Manoel",
+          "preferences": {
+            "autonomyLevel": "semi-autonomous",
+            "learningStyle": "hands-on",
+            "riskTolerance": "moderate",
+            "verbosity": "concise",
+            "workingHours": {
+              "timezone": "America/Sao_Paulo"
+            }
+          },
+          "socialProfiles": [],
+          "specialties": [
+            {
+              "domain": "web-development",
+              "subdomains": [
+                "full-stack",
+                "frontend",
+                "backend"
+              ],
+              "yearsActive": 12
+            },
+            {
+              "domain": "devops-sre-platform",
+              "subdomains": [
+                "CI/CD",
+                "cloud",
+                "infrastructure"
+              ],
+              "yearsActive": 8
+            },
+            {
+              "domain": "backend-development",
+              "subdomains": [
+                "APIs",
+                "services",
+                "databases"
+              ],
+              "yearsActive": 12
+            },
+            {
+              "domain": "ux-ui-design",
+              "subdomains": [
+                "UI components",
+                "design systems"
+              ],
+              "yearsActive": 8
+            }
+          ],
+          "toolPreferences": {
+            "editor": "VS Code",
+            "languages": [
+              "TypeScript",
+              "JavaScript",
+              "Python"
+            ],
+            "operatingSystem": "Linux",
+            "packageManagers": [
+              "npm",
+              "pnpm"
+            ],
+            "shell": "zsh",
+            "terminal": "zsh"
+          },
+          "updatedAt": "2026-05-10T14:32:00.000Z",
+          "version": 1
+        },
+        "profileDir": null,
+        "toolSelection": {
+          "justifications": {
+            "babysitter:project-install": "Will install babysitter on future projects",
+            "babysitter:yolo": "Low breakpoint tolerance — yolo mode suits semi-autonomous expert users",
+            "caveman": "Matches concise+technical communication preference",
+            "methodologies/tdd-quality-convergence": "Quality and productivity goals align with TDD convergence methodology",
+            "review": "Quality-focused workflow needs PR review tooling",
+            "security-review": "Security awareness for production-grade systems",
+            "simplify": "Code quality goal aligns with simplification reviews",
+            "specializations/backend-development": "Expert-level backend/API development",
+            "specializations/devops-sre-platform": "Advanced DevOps/CI/CD experience",
+            "specializations/qa-testing-automation": "Quality-focused goals, benefits from automated test processes",
+            "specializations/software-architecture": "Senior experience warrants architecture-level process support",
+            "specializations/web-development": "Primary specialty with 12 years full-stack experience"
+          },
+          "prioritized": {
+            "mustHave": [
+              "specializations/web-development",
+              "specializations/backend-development",
+              "methodologies/tdd-quality-convergence",
+              "caveman",
+              "review"
+            ],
+            "niceToHave": [
+              "specializations/devops-sre-platform",
+              "specializations/software-architecture",
+              "simplify",
+              "security-review",
+              "babysitter:yolo"
+            ]
+          },
+          "recommendedAgents": [
+            "general-purpose",
+            "cavecrew-builder",
+            "cavecrew-investigator",
+            "cavecrew-reviewer"
+          ],
+          "recommendedMethodology": "tdd-quality-convergence",
+          "recommendedProcesses": [
+            "specializations/web-development",
+            "specializations/backend-development",
+            "specializations/devops-sre-platform",
+            "specializations/qa-testing-automation",
+            "specializations/software-architecture",
+            "methodologies/tdd-quality-convergence"
+          ],
+          "recommendedSkills": [
+            "caveman",
+            "simplify",
+            "review",
+            "security-review",
+            "babysitter:yolo",
+            "babysitter:project-install"
+          ]
+        }
+      },
+      "instructions": [
+        "Determine the configuration directory (custom profileDir or default ~/.a5c/)",
+        "Create the configuration directory structure if it does not exist",
+        "Prepare the babysitter configuration based on user preferences:",
+        "  - Set default verbosity from profile.preferences.verbosity",
+        "  - Set autonomy level from profile.preferences.autonomyLevel",
+        "  - Set breakpoint tolerance from profile.breakpointTolerance",
+        "  - Configure default methodology from tool selection",
+        "  - Set up any editor/terminal integrations from profile.toolPreferences",
+        "Prepare a config.json with the user settings",
+        "Do NOT write the actual profile yet (that happens in the Save phase)",
+        "Do NOT overwrite any existing config values that the user has not explicitly changed",
+        "Return the planned configuration for review"
+      ],
+      "outputFormat": "JSON with configPath (string), configDir (string), plannedConfig (object), configCreated (boolean), existingConfigPreserved (array of keys not overwritten)",
+      "role": "system configuration specialist and developer experience engineer",
+      "task": "Set up the user-level babysitter configuration based on their profile and selected tools"
+    }
+  },
+  "description": "Set up user-level babysitter configuration files based on the built profile and tool selections",
+  "io": {
+    "inputJsonPath": "tasks/01KR94X76J7ENSW56XGQ53NJQD/input.json",
+    "outputJsonPath": "tasks/01KR94X76J7ENSW56XGQ53NJQD/result.json"
+  },
+  "kind": "agent",
+  "labels": [
+    "agent",
+    "configuration",
+    "cradle"
+  ],
+  "title": "Configure babysitter for user",
+  "schemaVersion": "2026.01.tasks-v1",
+  "effectId": "01KR94X76J7ENSW56XGQ53NJQD",
+  "taskId": "configure-user",
+  "invocationKey": "cradle/user-install:S000006:configure-user",
+  "stepId": "S000006",
+  "inputs": {
+    "profile": {
+      "breakpointTolerance": {
+        "alwaysBreakOn": [
+          "destructive-git",
+          "deploy",
+          "database-migration"
+        ],
+        "global": "low",
+        "skipBreakpointsForKnownPatterns": true
+      },
+      "communicationStyle": {
+        "explanationDepth": "concise",
+        "language": "en",
+        "preferredResponseFormat": "markdown",
+        "tone": "technical",
+        "useEmojis": false
+      },
+      "createdAt": "2026-05-10T14:32:00.000Z",
+      "experience": {
+        "certifications": [],
+        "education": [],
+        "industries": [
+          "software"
+        ],
+        "previousRoles": [],
+        "totalYearsProfessional": 12
+      },
+      "expertiseLevels": {
+        "backend/API": {
+          "confidence": 0.9,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "DevOps": {
+          "confidence": 0.8,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "advanced"
+        },
+        "frontend": {
+          "confidence": 0.9,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "full-stack web": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "JavaScript": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "Python": {
+          "confidence": 0.85,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "advanced"
+        },
+        "TypeScript": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        }
+      },
+      "externalIntegrations": [
+        {
+          "enabled": true,
+          "platform": "Linear",
+          "type": "ticketing"
+        }
+      ],
+      "goals": [
+        {
+          "category": "quality",
+          "description": "Ship high-quality software efficiently",
+          "id": "goal-quality-0",
+          "priority": "high",
+          "status": "active"
+        },
+        {
+          "category": "productivity",
+          "description": "Improve development productivity and code quality",
+          "id": "goal-productivity-0",
+          "priority": "high",
+          "status": "active"
+        }
+      ],
+      "installedAgents": [],
+      "installedPlugins": [
+        "a5c-ai/babysitter"
+      ],
+      "installedSkills": [],
+      "name": "Manoel",
+      "preferences": {
+        "autonomyLevel": "semi-autonomous",
+        "learningStyle": "hands-on",
+        "riskTolerance": "moderate",
+        "verbosity": "concise",
+        "workingHours": {
+          "timezone": "America/Sao_Paulo"
+        }
+      },
+      "socialProfiles": [],
+      "specialties": [
+        {
+          "domain": "web-development",
+          "subdomains": [
+            "full-stack",
+            "frontend",
+            "backend"
+          ],
+          "yearsActive": 12
+        },
+        {
+          "domain": "devops-sre-platform",
+          "subdomains": [
+            "CI/CD",
+            "cloud",
+            "infrastructure"
+          ],
+          "yearsActive": 8
+        },
+        {
+          "domain": "backend-development",
+          "subdomains": [
+            "APIs",
+            "services",
+            "databases"
+          ],
+          "yearsActive": 12
+        },
+        {
+          "domain": "ux-ui-design",
+          "subdomains": [
+            "UI components",
+            "design systems"
+          ],
+          "yearsActive": 8
+        }
+      ],
+      "toolPreferences": {
+        "editor": "VS Code",
+        "languages": [
+          "TypeScript",
+          "JavaScript",
+          "Python"
+        ],
+        "operatingSystem": "Linux",
+        "packageManagers": [
+          "npm",
+          "pnpm"
+        ],
+        "shell": "zsh",
+        "terminal": "zsh"
+      },
+      "updatedAt": "2026-05-10T14:32:00.000Z",
+      "version": 1
+    },
+    "profileDir": null,
+    "toolSelection": {
+      "justifications": {
+        "babysitter:project-install": "Will install babysitter on future projects",
+        "babysitter:yolo": "Low breakpoint tolerance — yolo mode suits semi-autonomous expert users",
+        "caveman": "Matches concise+technical communication preference",
+        "methodologies/tdd-quality-convergence": "Quality and productivity goals align with TDD convergence methodology",
+        "review": "Quality-focused workflow needs PR review tooling",
+        "security-review": "Security awareness for production-grade systems",
+        "simplify": "Code quality goal aligns with simplification reviews",
+        "specializations/backend-development": "Expert-level backend/API development",
+        "specializations/devops-sre-platform": "Advanced DevOps/CI/CD experience",
+        "specializations/qa-testing-automation": "Quality-focused goals, benefits from automated test processes",
+        "specializations/software-architecture": "Senior experience warrants architecture-level process support",
+        "specializations/web-development": "Primary specialty with 12 years full-stack experience"
+      },
+      "prioritized": {
+        "mustHave": [
+          "specializations/web-development",
+          "specializations/backend-development",
+          "methodologies/tdd-quality-convergence",
+          "caveman",
+          "review"
+        ],
+        "niceToHave": [
+          "specializations/devops-sre-platform",
+          "specializations/software-architecture",
+          "simplify",
+          "security-review",
+          "babysitter:yolo"
+        ]
+      },
+      "recommendedAgents": [
+        "general-purpose",
+        "cavecrew-builder",
+        "cavecrew-investigator",
+        "cavecrew-reviewer"
+      ],
+      "recommendedMethodology": "tdd-quality-convergence",
+      "recommendedProcesses": [
+        "specializations/web-development",
+        "specializations/backend-development",
+        "specializations/devops-sre-platform",
+        "specializations/qa-testing-automation",
+        "specializations/software-architecture",
+        "methodologies/tdd-quality-convergence"
+      ],
+      "recommendedSkills": [
+        "caveman",
+        "simplify",
+        "review",
+        "security-review",
+        "babysitter:yolo",
+        "babysitter:project-install"
+      ]
+    }
+  }
+}

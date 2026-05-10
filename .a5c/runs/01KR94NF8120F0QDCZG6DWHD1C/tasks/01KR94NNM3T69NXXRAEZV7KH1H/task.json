@@ -1,0 +1,82 @@
+{
+  "agent": {
+    "name": "general-purpose",
+    "outputSchema": {
+      "properties": {
+        "configDirExists": {
+          "type": "boolean"
+        },
+        "configFiles": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "existingProfile": {
+          "oneOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "isFirstRun": {
+          "type": "boolean"
+        },
+        "profileVersion": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "existingProfile",
+        "isFirstRun"
+      ],
+      "type": "object"
+    },
+    "prompt": {
+      "context": {
+        "additionalContext": "",
+        "defaultProfilePath": "~/.a5c/user-profile.json",
+        "profileDir": null
+      },
+      "instructions": [
+        "Run `babysitter profile:read --user --json` to check for an existing user profile (add `--dir <dir>` if a custom profileDir is provided)",
+        "If the command succeeds (exit 0), parse the JSON output as the existing profile",
+        "If the command fails (exit 1), there is no existing profile — this is a fresh install",
+        "Check if ~/.a5c/ directory exists and list its contents",
+        "Check if any .a5c/ directory exists in the current working directory",
+        "Report whether this is a fresh install or an update to an existing setup",
+        "If an existing profile is found, include it in full in the output so it can be used as a merge base",
+        "Do NOT modify any files - this is a read-only check",
+        "IMPORTANT: Always use the babysitter CLI for profile operations — never import SDK profile functions directly"
+      ],
+      "outputFormat": "JSON with existingProfile (full profile object or null), configDirExists (boolean), configFiles (array of filenames found), isFirstRun (boolean)",
+      "role": "system administrator and configuration specialist",
+      "task": "Check if a babysitter user profile already exists and read it if so. Also check for any existing babysitter configuration files."
+    }
+  },
+  "description": "Read existing user profile and configuration to support idempotent re-runs",
+  "io": {
+    "inputJsonPath": "tasks/01KR94NNM3T69NXXRAEZV7KH1H/input.json",
+    "outputJsonPath": "tasks/01KR94NNM3T69NXXRAEZV7KH1H/result.json"
+  },
+  "kind": "agent",
+  "labels": [
+    "agent",
+    "cradle",
+    "read-only",
+    "setup"
+  ],
+  "title": "Check existing babysitter setup",
+  "schemaVersion": "2026.01.tasks-v1",
+  "effectId": "01KR94NNM3T69NXXRAEZV7KH1H",
+  "taskId": "check-existing-setup",
+  "invocationKey": "cradle/user-install:S000001:check-existing-setup",
+  "stepId": "S000001",
+  "inputs": {
+    "additionalContext": "",
+    "profileDir": null
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "agent": {
+    "name": "general-purpose",
+    "outputSchema": {
+      "properties": {
+        "availableSpecializations": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "changesSummary": {
+          "type": "string"
+        },
+        "profile": {
+          "properties": {
+            "breakpointTolerance": {
+              "type": "object"
+            },
+            "communicationStyle": {
+              "type": "object"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "experience": {
+              "type": "object"
+            },
+            "expertiseLevels": {
+              "type": "object"
+            },
+            "externalIntegrations": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "goals": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "installedAgents": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "installedPlugins": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "installedSkills": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "name": {
+              "type": "string"
+            },
+            "preferences": {
+              "type": "object"
+            },
+            "socialProfiles": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "specialties": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "toolPreferences": {
+              "type": "object"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "version": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "name",
+            "specialties",
+            "expertiseLevels",
+            "goals",
+            "preferences",
+            "toolPreferences",
+            "breakpointTolerance",
+            "communicationStyle",
+            "experience",
+            "createdAt",
+            "updatedAt",
+            "version"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "profile",
+        "changesSummary"
+      ],
+      "type": "object"
+    },
+    "prompt": {
+      "context": {
+        "additionalContext": "",
+        "existingProfile": null,
+        "profileDir": null,
+        "socialResearch": null,
+        "userProfileSchema": {
+          "breakpointToleranceSchema": "{ global: \"minimal\"|\"low\"|\"moderate\"|\"high\"|\"maximum\", perCategory?: Record<string, tolerance>, skipBreakpointsForKnownPatterns?: boolean, alwaysBreakOn?: string[] }",
+          "communicationStyleSchema": "{ tone?: string, language?: string, useEmojis?: boolean, explanationDepth?: string, preferredResponseFormat?: string }",
+          "experienceSchema": "{ totalYearsProfessional?: number, currentRole?: string, currentOrganization?: string, industries?: string[], previousRoles?: array, education?: array, certifications?: string[] }",
+          "expertiseRatingSchema": "{ level: \"novice\"|\"beginner\"|\"intermediate\"|\"advanced\"|\"expert\", confidence?: number (0-1), lastAssessed?: ISO8601 }",
+          "goalSchema": "{ id: string, description: string, category: string, priority?: string, status?: string }",
+          "preferencesSchema": "{ verbosity?: string, autonomyLevel?: string, riskTolerance?: string, workingHours?: {timezone?, start?, end?}, learningStyle?: string }",
+          "requiredFields": [
+            "name",
+            "specialties",
+            "expertiseLevels",
+            "goals",
+            "preferences",
+            "toolPreferences",
+            "breakpointTolerance",
+            "communicationStyle",
+            "experience",
+            "createdAt",
+            "updatedAt",
+            "version"
+          ],
+          "specialtySchema": "{ domain: string, subdomains?: string[], yearsActive?: number }",
+          "toolPreferencesSchema": "{ editor?: string, shell?: string, terminal?: string, packageManagers?: string[], languages?: string[], operatingSystem?: string }"
+        }
+      },
+      "instructions": [
+        "Read the breakpoint response from the user interview (Phase 3) to get the user-provided information",
+        "If an existing profile exists (loaded via `babysitter profile:read --user --json` in Phase 1), use it as the base and merge new information on top",
+        "If social research is available, incorporate verified findings (prefer user-stated info over inferred)",
+        "Build a complete UserProfile object conforming to the schema described in context",
+        "IMPORTANT: Do not import or call SDK profile functions directly — use the babysitter CLI for all profile I/O",
+        "For any fields the user did not provide, use sensible defaults:",
+        "  - preferences.verbosity: \"normal\"",
+        "  - preferences.autonomyLevel: \"semi-autonomous\"",
+        "  - preferences.riskTolerance: \"moderate\"",
+        "  - breakpointTolerance.global: \"moderate\"",
+        "  - communicationStyle.tone: \"professional\"",
+        "  - communicationStyle.useEmojis: false",
+        "  - communicationStyle.explanationDepth: \"standard\"",
+        "  - communicationStyle.preferredResponseFormat: \"markdown\"",
+        "Set createdAt to the existing profile createdAt if updating, or current timestamp if new",
+        "Set updatedAt to current timestamp",
+        "Set version to existing version + 1 if updating, or 1 if new",
+        "Generate unique IDs for goals (use format: goal-<category>-<index>)",
+        "Also generate a list of available specialization categories from the process library for tool selection",
+        "Write the preview profile to artifacts/user-profile-preview.json for the review breakpoint (this is a run artifact, NOT the actual profile — the actual profile is written later by the save task using `babysitter profile:write`)",
+        "Do NOT write to ~/.a5c/user-profile.json or any profile path directly — that is the save task's job via the CLI"
+      ],
+      "outputFormat": "JSON with profile (complete UserProfile object), availableSpecializations (array of category names from the process library), changesSummary (string describing what was new/changed)",
+      "role": "user experience personalization specialist and data integration engineer",
+      "task": "Build a comprehensive UserProfile by merging all available information sources. The profile must conform to the babysitter SDK UserProfile schema."
+    }
+  },
+  "description": "Merge interview responses, social research, and existing profile into a complete UserProfile",
+  "io": {
+    "inputJsonPath": "tasks/01KR94TMVTA2T0KT8XCN22H5EC/input.json",
+    "outputJsonPath": "tasks/01KR94TMVTA2T0KT8XCN22H5EC/result.json"
+  },
+  "kind": "agent",
+  "labels": [
+    "agent",
+    "build",
+    "cradle",
+    "profile"
+  ],
+  "title": "Build comprehensive user profile",
+  "schemaVersion": "2026.01.tasks-v1",
+  "effectId": "01KR94TMVTA2T0KT8XCN22H5EC",
+  "taskId": "build-profile",
+  "invocationKey": "cradle/user-install:S000004:build-profile",
+  "stepId": "S000004",
+  "inputs": {
+    "additionalContext": "",
+    "existingProfile": null,
+    "profileDir": null,
+    "socialResearch": null
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "schemaVersion": "2026.01.results-v1",
+  "effectId": "01KR94Z5T0VQV63K495DY9YKKK",
+  "taskId": "save-profile",
+  "invocationKey": "cradle/user-install:S000008:save-profile",
+  "status": "ok",
+  "result": {
+    "bytesWritten": 3395,
+    "configPath": "/home/manoelfreitas/.a5c/config.json",
+    "filesWritten": [
+      "/home/manoelfreitas/.a5c/user-profile.json",
+      "/home/manoelfreitas/.a5c/user-profile.md",
+      "/home/manoelfreitas/.a5c/config.json"
+    ],
+    "markdownPath": "/home/manoelfreitas/.a5c/user-profile.md",
+    "savedProfile": {
+      "breakpointTolerance": {
+        "alwaysBreakOn": [
+          "destructive-git",
+          "deploy",
+          "database-migration"
+        ],
+        "global": "low",
+        "skipBreakpointsForKnownPatterns": true
+      },
+      "communicationStyle": {
+        "explanationDepth": "concise",
+        "language": "en",
+        "preferredResponseFormat": "markdown",
+        "tone": "technical",
+        "useEmojis": false
+      },
+      "createdAt": "2026-05-10T14:32:00.000Z",
+      "experience": {
+        "certifications": [],
+        "education": [],
+        "industries": [
+          "software"
+        ],
+        "previousRoles": [],
+        "totalYearsProfessional": 12
+      },
+      "expertiseLevels": {
+        "backend/API": {
+          "confidence": 0.9,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "DevOps": {
+          "confidence": 0.8,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "advanced"
+        },
+        "frontend": {
+          "confidence": 0.9,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "full-stack web": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "JavaScript": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "Python": {
+          "confidence": 0.85,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "advanced"
+        },
+        "TypeScript": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        }
+      },
+      "externalIntegrations": [
+        {
+          "enabled": true,
+          "platform": "Linear",
+          "type": "ticketing"
+        }
+      ],
+      "goals": [
+        {
+          "category": "quality",
+          "description": "Ship high-quality software efficiently",
+          "id": "goal-quality-0",
+          "priority": "high",
+          "status": "active"
+        },
+        {
+          "category": "productivity",
+          "description": "Improve development productivity and code quality",
+          "id": "goal-productivity-0",
+          "priority": "high",
+          "status": "active"
+        }
+      ],
+      "installedAgents": [],
+      "installedPlugins": [
+        "a5c-ai/babysitter"
+      ],
+      "installedSkills": [],
+      "name": "Manoel",
+      "preferences": {
+        "autonomyLevel": "semi-autonomous",
+        "learningStyle": "hands-on",
+        "riskTolerance": "moderate",
+        "verbosity": "concise",
+        "workingHours": {
+          "timezone": "America/Sao_Paulo"
+        }
+      },
+      "socialProfiles": [],
+      "specialties": [
+        {
+          "domain": "web-development",
+          "subdomains": [
+            "full-stack",
+            "frontend",
+            "backend"
+          ],
+          "yearsActive": 12
+        },
+        {
+          "domain": "devops-sre-platform",
+          "subdomains": [
+            "CI/CD",
+            "cloud",
+            "infrastructure"
+          ],
+          "yearsActive": 8
+        },
+        {
+          "domain": "backend-development",
+          "subdomains": [
+            "APIs",
+            "services",
+            "databases"
+          ],
+          "yearsActive": 12
+        },
+        {
+          "domain": "ux-ui-design",
+          "subdomains": [
+            "UI components",
+            "design systems"
+          ],
+          "yearsActive": 8
+        }
+      ],
+      "toolPreferences": {
+        "editor": "VS Code",
+        "languages": [
+          "TypeScript",
+          "JavaScript",
+          "Python"
+        ],
+        "operatingSystem": "Linux",
+        "packageManagers": [
+          "npm",
+          "pnpm"
+        ],
+        "shell": "zsh",
+        "terminal": "zsh"
+      },
+      "updatedAt": "2026-05-10T14:34:26.000Z",
+      "version": 1
+    },
+    "verified": true
+  },
+  "startedAt": "2026-05-10T14:35:13.076Z",
+  "finishedAt": "2026-05-10T14:35:13.076Z",
+  "value": {
+    "bytesWritten": 3395,
+    "configPath": "/home/manoelfreitas/.a5c/config.json",
+    "filesWritten": [
+      "/home/manoelfreitas/.a5c/user-profile.json",
+      "/home/manoelfreitas/.a5c/user-profile.md",
+      "/home/manoelfreitas/.a5c/config.json"
+    ],
+    "markdownPath": "/home/manoelfreitas/.a5c/user-profile.md",
+    "savedProfile": {
+      "breakpointTolerance": {
+        "alwaysBreakOn": [
+          "destructive-git",
+          "deploy",
+          "database-migration"
+        ],
+        "global": "low",
+        "skipBreakpointsForKnownPatterns": true
+      },
+      "communicationStyle": {
+        "explanationDepth": "concise",
+        "language": "en",
+        "preferredResponseFormat": "markdown",
+        "tone": "technical",
+        "useEmojis": false
+      },
+      "createdAt": "2026-05-10T14:32:00.000Z",
+      "experience": {
+        "certifications": [],
+        "education": [],
+        "industries": [
+          "software"
+        ],
+        "previousRoles": [],
+        "totalYearsProfessional": 12
+      },
+      "expertiseLevels": {
+        "backend/API": {
+          "confidence": 0.9,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "DevOps": {
+          "confidence": 0.8,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "advanced"
+        },
+        "frontend": {
+          "confidence": 0.9,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "full-stack web": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "JavaScript": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "Python": {
+          "confidence": 0.85,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "advanced"
+        },
+        "TypeScript": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        }
+      },
+      "externalIntegrations": [
+        {
+          "enabled": true,
+          "platform": "Linear",
+          "type": "ticketing"
+        }
+      ],
+      "goals": [
+        {
+          "category": "quality",
+          "description": "Ship high-quality software efficiently",
+          "id": "goal-quality-0",
+          "priority": "high",
+          "status": "active"
+        },
+        {
+          "category": "productivity",
+          "description": "Improve development productivity and code quality",
+          "id": "goal-productivity-0",
+          "priority": "high",
+          "status": "active"
+        }
+      ],
+      "installedAgents": [],
+      "installedPlugins": [
+        "a5c-ai/babysitter"
+      ],
+      "installedSkills": [],
+      "name": "Manoel",
+      "preferences": {
+        "autonomyLevel": "semi-autonomous",
+        "learningStyle": "hands-on",
+        "riskTolerance": "moderate",
+        "verbosity": "concise",
+        "workingHours": {
+          "timezone": "America/Sao_Paulo"
+        }
+      },
+      "socialProfiles": [],
+      "specialties": [
+        {
+          "domain": "web-development",
+          "subdomains": [
+            "full-stack",
+            "frontend",
+            "backend"
+          ],
+          "yearsActive": 12
+        },
+        {
+          "domain": "devops-sre-platform",
+          "subdomains": [
+            "CI/CD",
+            "cloud",
+            "infrastructure"
+          ],
+          "yearsActive": 8
+        },
+        {
+          "domain": "backend-development",
+          "subdomains": [
+            "APIs",
+            "services",
+            "databases"
+          ],
+          "yearsActive": 12
+        },
+        {
+          "domain": "ux-ui-design",
+          "subdomains": [
+            "UI components",
+            "design systems"
+          ],
+          "yearsActive": 8
+        }
+      ],
+      "toolPreferences": {
+        "editor": "VS Code",
+        "languages": [
+          "TypeScript",
+          "JavaScript",
+          "Python"
+        ],
+        "operatingSystem": "Linux",
+        "packageManagers": [
+          "npm",
+          "pnpm"
+        ],
+        "shell": "zsh",
+        "terminal": "zsh"
+      },
+      "updatedAt": "2026-05-10T14:34:26.000Z",
+      "version": 1
+    },
+    "verified": true
+  }
+}

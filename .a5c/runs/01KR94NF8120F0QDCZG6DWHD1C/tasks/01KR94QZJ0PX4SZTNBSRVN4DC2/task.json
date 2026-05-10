@@ -1,0 +1,33 @@
+{
+  "kind": "breakpoint",
+  "metadata": {
+    "label": "breakpoint",
+    "payload": {
+      "context": {
+        "existingProfile": "No existing profile found",
+        "socialProfileUrls": "None provided (can be added later)"
+      },
+      "question": "Welcome to babysitter setup! Please tell us about yourself so we can personalize your experience.\n\n(This is a fresh setup. We will create your profile from scratch.)\n\nPlease provide the following information:\n\n1. **Name**: What should we call you?\n2. **Specialties**: What are your primary domains? (e.g., backend, frontend, ML, DevOps, data engineering)\n3. **Experience**: How many years of professional experience do you have? What is your current role and organization?\n4. **Expertise Levels**: Rate yourself (novice/beginner/intermediate/advanced/expert) on your key technologies and skills\n5. **Goals**: What are you trying to achieve? (e.g., learn a new framework, ship a product, improve code quality)\n6. **Preferences**:\n   - Verbosity: concise / normal / verbose\n   - Autonomy: supervised / semi-autonomous / autonomous\n   - Risk tolerance: conservative / moderate / aggressive\n   - Working hours and timezone\n7. **Tool Preferences**: Preferred editor, shell, terminal, languages, OS\n8. **Communication Style**: Professional/casual/technical tone? Brief or detailed explanations?\n9. **Breakpoint Tolerance**: How often should babysitter pause for your approval? (minimal/low/moderate/high/maximum)\n10. **External Integrations** (optional): Do you use any of these? We can integrate babysitter with them:\n    - Communication: Slack, Discord, Teams, email\n    - Ticketing: Jira, Linear, GitHub Issues, Asana\n    - Calendar/Life events: Google Calendar, Apple Calendar\n    - Health/Wellness: Apple Health, Fitbit (for work-life balance awareness)\n    - Browser: Chrome, Firefox, Arc (for extensions)\n    - Productivity: Toggl, RescueTime, Notion\n11. **Life & Personal Context** (optional): Anything about your life, hobbies, or personal goals that might help babysitter work around your schedule or interests?\n12. **Social Profiles** (optional): Share LinkedIn, GitHub, or other profile URLs for enriched setup\n\nAnswer as much or as little as you like. We will fill in sensible defaults for anything you skip.",
+      "title": "User Onboarding Interview"
+    },
+    "requestedAt": "2026-05-10T14:30:30.720Z"
+  },
+  "title": "breakpoint",
+  "schemaVersion": "2026.01.tasks-v1",
+  "effectId": "01KR94QZJ0PX4SZTNBSRVN4DC2",
+  "taskId": "__sdk.breakpoint",
+  "invocationKey": "cradle/user-install:S000003:__sdk.breakpoint",
+  "stepId": "S000003",
+  "inputs": {
+    "label": "breakpoint",
+    "payload": {
+      "context": {
+        "existingProfile": "No existing profile found",
+        "socialProfileUrls": "None provided (can be added later)"
+      },
+      "question": "Welcome to babysitter setup! Please tell us about yourself so we can personalize your experience.\n\n(This is a fresh setup. We will create your profile from scratch.)\n\nPlease provide the following information:\n\n1. **Name**: What should we call you?\n2. **Specialties**: What are your primary domains? (e.g., backend, frontend, ML, DevOps, data engineering)\n3. **Experience**: How many years of professional experience do you have? What is your current role and organization?\n4. **Expertise Levels**: Rate yourself (novice/beginner/intermediate/advanced/expert) on your key technologies and skills\n5. **Goals**: What are you trying to achieve? (e.g., learn a new framework, ship a product, improve code quality)\n6. **Preferences**:\n   - Verbosity: concise / normal / verbose\n   - Autonomy: supervised / semi-autonomous / autonomous\n   - Risk tolerance: conservative / moderate / aggressive\n   - Working hours and timezone\n7. **Tool Preferences**: Preferred editor, shell, terminal, languages, OS\n8. **Communication Style**: Professional/casual/technical tone? Brief or detailed explanations?\n9. **Breakpoint Tolerance**: How often should babysitter pause for your approval? (minimal/low/moderate/high/maximum)\n10. **External Integrations** (optional): Do you use any of these? We can integrate babysitter with them:\n    - Communication: Slack, Discord, Teams, email\n    - Ticketing: Jira, Linear, GitHub Issues, Asana\n    - Calendar/Life events: Google Calendar, Apple Calendar\n    - Health/Wellness: Apple Health, Fitbit (for work-life balance awareness)\n    - Browser: Chrome, Firefox, Arc (for extensions)\n    - Productivity: Toggl, RescueTime, Notion\n11. **Life & Personal Context** (optional): Anything about your life, hobbies, or personal goals that might help babysitter work around your schedule or interests?\n12. **Social Profiles** (optional): Share LinkedIn, GitHub, or other profile URLs for enriched setup\n\nAnswer as much or as little as you like. We will fill in sensible defaults for anything you skip.",
+      "title": "User Onboarding Interview"
+    },
+    "requestedAt": "2026-05-10T14:30:30.720Z"
+  }
+}

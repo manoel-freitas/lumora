@@ -1,0 +1,19 @@
+{
+  "name": "lumora",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "db:migrate": "pnpm --filter @lumora/api db:migrate",
+    "db:generate": "pnpm --filter @lumora/api db:generate",
+    "db:studio": "pnpm --filter @lumora/api db:studio",
+    "db:seed": "pnpm --filter @lumora/api db:seed"
+  },
+  "devDependencies": {
+    "turbo": "^2.6.1"
+  }
+}

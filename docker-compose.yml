@@ -1,0 +1,100 @@
+services:
+  # ── Infrastructure ──────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: lumora
+      POSTGRES_USER: lumora
+      POSTGRES_PASSWORD: lumora
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lumora -d lumora"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ── Application ─────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      target: dev
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://lumora:lumora@postgres:5432/lumora
+      REDIS_URL: redis://redis:6379
+      API_PORT: "3001"
+    ports:
+      - "3001:3001"
+    volumes:
+      # hot-reload: mount source, exclude node_modules
+      - ./apps/api/src:/app/apps/api/src
+      - ./packages/shared/src:/app/packages/shared/src
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  worker:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      target: dev
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://lumora:lumora@postgres:5432/lumora
+      REDIS_URL: redis://redis:6379
+    command: pnpm --filter @lumora/api dev:worker
+    volumes:
+      - ./apps/api/src:/app/apps/api/src
+      - ./packages/shared/src:/app/packages/shared/src
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      target: dev
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NUXT_PUBLIC_API_URL: http://localhost:3001
+      HONO_API_URL: http://api:3001
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./apps/web:/app/apps/web
+      - ./packages/shared/src:/app/packages/shared/src
+      # prevent overwriting container node_modules
+      - /app/apps/web/node_modules
+      - /app/node_modules
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
+  redis_data:

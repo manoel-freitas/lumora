@@ -1,0 +1,25 @@
+{
+  "configPath": "/home/manoelfreitas/.a5c/config.json",
+  "configDir": "/home/manoelfreitas/.a5c/",
+  "plannedConfig": {
+    "verbosity": "concise",
+    "autonomyLevel": "semi-autonomous",
+    "breakpointTolerance": {
+      "global": "low",
+      "skipBreakpointsForKnownPatterns": true,
+      "alwaysBreakOn": ["destructive-git", "deploy", "database-migration"]
+    },
+    "defaultMethodology": "tdd-quality-convergence",
+    "communicationStyle": {
+      "tone": "technical",
+      "useEmojis": false,
+      "explanationDepth": "concise",
+      "preferredResponseFormat": "markdown"
+    },
+    "editor": "VS Code",
+    "shell": "zsh",
+    "timezone": "America/Sao_Paulo"
+  },
+  "configCreated": true,
+  "existingConfigPreserved": []
+}

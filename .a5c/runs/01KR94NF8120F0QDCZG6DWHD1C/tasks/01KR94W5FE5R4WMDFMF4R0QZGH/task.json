@@ -1,0 +1,460 @@
+{
+  "agent": {
+    "name": "general-purpose",
+    "outputSchema": {
+      "properties": {
+        "justifications": {
+          "type": "object"
+        },
+        "prioritized": {
+          "properties": {
+            "mustHave": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "niceToHave": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "recommendedAgents": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "recommendedMethodology": {
+          "type": "string"
+        },
+        "recommendedProcesses": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "recommendedSkills": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "recommendedProcesses",
+        "recommendedSkills",
+        "recommendedMethodology"
+      ],
+      "type": "object"
+    },
+    "prompt": {
+      "context": {
+        "availableProcessCategories": [
+          "gsd (Get Stuff Done - general project workflows)",
+          "methodologies (TDD, agile, spec-driven, evolutionary, domain-driven, etc.)",
+          "specializations/data-science-ml",
+          "specializations/devops-sre-platform",
+          "specializations/ux-ui-design",
+          "specializations/product-management",
+          "specializations/data-engineering-analytics",
+          "specializations/technical-documentation",
+          "specializations/domains/science",
+          "specializations/domains/business",
+          "specializations/domains/social-sciences-humanities"
+        ],
+        "availableSpecializations": [
+          "web-development",
+          "backend-development",
+          "devops-sre-platform",
+          "ux-ui-design",
+          "data-science-ml",
+          "data-engineering-analytics",
+          "software-architecture",
+          "qa-testing-automation",
+          "product-management",
+          "technical-documentation",
+          "ai-agents-conversational",
+          "cli-mcp-development",
+          "security-compliance",
+          "mobile-development",
+          "performance-optimization"
+        ],
+        "profile": {
+          "breakpointTolerance": {
+            "alwaysBreakOn": [
+              "destructive-git",
+              "deploy",
+              "database-migration"
+            ],
+            "global": "low",
+            "skipBreakpointsForKnownPatterns": true
+          },
+          "communicationStyle": {
+            "explanationDepth": "concise",
+            "language": "en",
+            "preferredResponseFormat": "markdown",
+            "tone": "technical",
+            "useEmojis": false
+          },
+          "createdAt": "2026-05-10T14:32:00.000Z",
+          "experience": {
+            "certifications": [],
+            "education": [],
+            "industries": [
+              "software"
+            ],
+            "previousRoles": [],
+            "totalYearsProfessional": 12
+          },
+          "expertiseLevels": {
+            "backend/API": {
+              "confidence": 0.9,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "expert"
+            },
+            "DevOps": {
+              "confidence": 0.8,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "advanced"
+            },
+            "frontend": {
+              "confidence": 0.9,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "expert"
+            },
+            "full-stack web": {
+              "confidence": 0.95,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "expert"
+            },
+            "JavaScript": {
+              "confidence": 0.95,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "expert"
+            },
+            "Python": {
+              "confidence": 0.85,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "advanced"
+            },
+            "TypeScript": {
+              "confidence": 0.95,
+              "lastAssessed": "2026-05-10T14:32:00.000Z",
+              "level": "expert"
+            }
+          },
+          "externalIntegrations": [
+            {
+              "enabled": true,
+              "platform": "Linear",
+              "type": "ticketing"
+            }
+          ],
+          "goals": [
+            {
+              "category": "quality",
+              "description": "Ship high-quality software efficiently",
+              "id": "goal-quality-0",
+              "priority": "high",
+              "status": "active"
+            },
+            {
+              "category": "productivity",
+              "description": "Improve development productivity and code quality",
+              "id": "goal-productivity-0",
+              "priority": "high",
+              "status": "active"
+            }
+          ],
+          "installedAgents": [],
+          "installedPlugins": [
+            "a5c-ai/babysitter"
+          ],
+          "installedSkills": [],
+          "name": "Manoel",
+          "preferences": {
+            "autonomyLevel": "semi-autonomous",
+            "learningStyle": "hands-on",
+            "riskTolerance": "moderate",
+            "verbosity": "concise",
+            "workingHours": {
+              "timezone": "America/Sao_Paulo"
+            }
+          },
+          "socialProfiles": [],
+          "specialties": [
+            {
+              "domain": "web-development",
+              "subdomains": [
+                "full-stack",
+                "frontend",
+                "backend"
+              ],
+              "yearsActive": 12
+            },
+            {
+              "domain": "devops-sre-platform",
+              "subdomains": [
+                "CI/CD",
+                "cloud",
+                "infrastructure"
+              ],
+              "yearsActive": 8
+            },
+            {
+              "domain": "backend-development",
+              "subdomains": [
+                "APIs",
+                "services",
+                "databases"
+              ],
+              "yearsActive": 12
+            },
+            {
+              "domain": "ux-ui-design",
+              "subdomains": [
+                "UI components",
+                "design systems"
+              ],
+              "yearsActive": 8
+            }
+          ],
+          "toolPreferences": {
+            "editor": "VS Code",
+            "languages": [
+              "TypeScript",
+              "JavaScript",
+              "Python"
+            ],
+            "operatingSystem": "Linux",
+            "packageManagers": [
+              "npm",
+              "pnpm"
+            ],
+            "shell": "zsh",
+            "terminal": "zsh"
+          },
+          "updatedAt": "2026-05-10T14:32:00.000Z",
+          "version": 1
+        }
+      },
+      "instructions": [
+        "Analyze the user specialties, expertise levels, and goals",
+        "Match user profile against available process categories and specializations",
+        "Recommend specific processes that would be most useful for the user",
+        "Recommend skills and agents based on user needs",
+        "For each recommendation, provide a brief justification",
+        "Prioritize recommendations: must-have vs nice-to-have",
+        "Consider the user breakpoint tolerance when recommending autonomous vs supervised processes",
+        "Consider the user expertise level to determine which processes they would benefit from most",
+        "Recommend a default methodology based on user preferences and experience level",
+        "If user is a beginner, recommend more guided/structured processes",
+        "If user is an expert, recommend more autonomous/flexible processes",
+        "Write recommendations to artifacts/tool-recommendations.json"
+      ],
+      "outputFormat": "JSON with recommendedProcesses (array), recommendedSkills (array), recommendedAgents (array), recommendedMethodology (string), justifications (object mapping recommendation to reason), prioritized (object with mustHave and niceToHave arrays)",
+      "role": "developer tools expert and productivity consultant",
+      "task": "Analyze the user profile and recommend the optimal set of babysitter tools, agents, processes, and skills based on their specialties, expertise, and goals"
+    }
+  },
+  "description": "Analyze user profile to recommend the best tools, agents, processes, and skills from available specializations",
+  "io": {
+    "inputJsonPath": "tasks/01KR94W5FE5R4WMDFMF4R0QZGH/input.json",
+    "outputJsonPath": "tasks/01KR94W5FE5R4WMDFMF4R0QZGH/result.json"
+  },
+  "kind": "agent",
+  "labels": [
+    "agent",
+    "cradle",
+    "selection",
+    "tools"
+  ],
+  "title": "Select optimal tools and processes for user",
+  "schemaVersion": "2026.01.tasks-v1",
+  "effectId": "01KR94W5FE5R4WMDFMF4R0QZGH",
+  "taskId": "tool-selection",
+  "invocationKey": "cradle/user-install:S000005:tool-selection",
+  "stepId": "S000005",
+  "inputs": {
+    "availableSpecializations": [
+      "web-development",
+      "backend-development",
+      "devops-sre-platform",
+      "ux-ui-design",
+      "data-science-ml",
+      "data-engineering-analytics",
+      "software-architecture",
+      "qa-testing-automation",
+      "product-management",
+      "technical-documentation",
+      "ai-agents-conversational",
+      "cli-mcp-development",
+      "security-compliance",
+      "mobile-development",
+      "performance-optimization"
+    ],
+    "profile": {
+      "breakpointTolerance": {
+        "alwaysBreakOn": [
+          "destructive-git",
+          "deploy",
+          "database-migration"
+        ],
+        "global": "low",
+        "skipBreakpointsForKnownPatterns": true
+      },
+      "communicationStyle": {
+        "explanationDepth": "concise",
+        "language": "en",
+        "preferredResponseFormat": "markdown",
+        "tone": "technical",
+        "useEmojis": false
+      },
+      "createdAt": "2026-05-10T14:32:00.000Z",
+      "experience": {
+        "certifications": [],
+        "education": [],
+        "industries": [
+          "software"
+        ],
+        "previousRoles": [],
+        "totalYearsProfessional": 12
+      },
+      "expertiseLevels": {
+        "backend/API": {
+          "confidence": 0.9,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "DevOps": {
+          "confidence": 0.8,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "advanced"
+        },
+        "frontend": {
+          "confidence": 0.9,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "full-stack web": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "JavaScript": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        },
+        "Python": {
+          "confidence": 0.85,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "advanced"
+        },
+        "TypeScript": {
+          "confidence": 0.95,
+          "lastAssessed": "2026-05-10T14:32:00.000Z",
+          "level": "expert"
+        }
+      },
+      "externalIntegrations": [
+        {
+          "enabled": true,
+          "platform": "Linear",
+          "type": "ticketing"
+        }
+      ],
+      "goals": [
+        {
+          "category": "quality",
+          "description": "Ship high-quality software efficiently",
+          "id": "goal-quality-0",
+          "priority": "high",
+          "status": "active"
+        },
+        {
+          "category": "productivity",
+          "description": "Improve development productivity and code quality",
+          "id": "goal-productivity-0",
+          "priority": "high",
+          "status": "active"
+        }
+      ],
+      "installedAgents": [],
+      "installedPlugins": [
+        "a5c-ai/babysitter"
+      ],
+      "installedSkills": [],
+      "name": "Manoel",
+      "preferences": {
+        "autonomyLevel": "semi-autonomous",
+        "learningStyle": "hands-on",
+        "riskTolerance": "moderate",
+        "verbosity": "concise",
+        "workingHours": {
+          "timezone": "America/Sao_Paulo"
+        }
+      },
+      "socialProfiles": [],
+      "specialties": [
+        {
+          "domain": "web-development",
+          "subdomains": [
+            "full-stack",
+            "frontend",
+            "backend"
+          ],
+          "yearsActive": 12
+        },
+        {
+          "domain": "devops-sre-platform",
+          "subdomains": [
+            "CI/CD",
+            "cloud",
+            "infrastructure"
+          ],
+          "yearsActive": 8
+        },
+        {
+          "domain": "backend-development",
+          "subdomains": [
+            "APIs",
+            "services",
+            "databases"
+          ],
+          "yearsActive": 12
+        },
+        {
+          "domain": "ux-ui-design",
+          "subdomains": [
+            "UI components",
+            "design systems"
+          ],
+          "yearsActive": 8
+        }
+      ],
+      "toolPreferences": {
+        "editor": "VS Code",
+        "languages": [
+          "TypeScript",
+          "JavaScript",
+          "Python"
+        ],
+        "operatingSystem": "Linux",
+        "packageManagers": [
+          "npm",
+          "pnpm"
+        ],
+        "shell": "zsh",
+        "terminal": "zsh"
+      },
+      "updatedAt": "2026-05-10T14:32:00.000Z",
+      "version": 1
+    }
+  }
+}
