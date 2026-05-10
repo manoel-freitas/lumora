@@ -1,6 +1,11 @@
 <script setup lang="ts">
+interface Character {
+  id: string
+  name: string
+}
+
 interface CampaignFormValues {
-  influencerProfileId: string
+  characterId: string
   name: string
   goal: string
   platform: string
@@ -10,6 +15,7 @@ interface CampaignFormValues {
 }
 
 const props = withDefaults(defineProps<{
+  characterId?: string
   initialValues?: Partial<CampaignFormValues>
   submitLabel?: string
   submitting?: boolean
@@ -21,7 +27,7 @@ const props = withDefaults(defineProps<{
 const emit = defineEmits<{ submit: [values: Record<string, unknown>] }>()
 
 const form = reactive<CampaignFormValues>({
-  influencerProfileId: props.initialValues?.influencerProfileId || '',
+  characterId: props.characterId || props.initialValues?.characterId || '',
   name: props.initialValues?.name || '',
   goal: props.initialValues?.goal || '',
   platform: props.initialValues?.platform || 'instagram',
@@ -30,9 +36,30 @@ const form = reactive<CampaignFormValues>({
   endsAt: props.initialValues?.endsAt ? props.initialValues.endsAt.slice(0, 10) : '',
 })
 
+const { list: listCharacters } = useCharacters()
+const characters = ref<Character[]>([])
+const loadingCharacters = ref(false)
+
+onMounted(async () => {
+  loadingCharacters.value = true
+  try {
+    const result = await listCharacters() as { items: Character[] }
+    characters.value = result.items ?? []
+  } catch {
+    characters.value = []
+  } finally {
+    loadingCharacters.value = false
+  }
+})
+
+const selectedCharacterName = computed(() => {
+  if (!props.characterId) return ''
+  return characters.value.find(c => c.id === props.characterId)?.name ?? props.characterId
+})
+
 const attempted = shallowRef(false)
 const nameError = computed(() => attempted.value && !form.name.trim() ? 'Name is required' : '')
-const personaError = computed(() => attempted.value && !form.influencerProfileId.trim() ? 'Persona ID is required' : '')
+const characterError = computed(() => attempted.value && !form.characterId.trim() ? 'Character is required' : '')
 
 function toDateTime(value: string) {
   return value ? new Date(`${value}T00:00:00`).toISOString() : undefined
@@ -40,10 +67,10 @@ function toDateTime(value: string) {
 
 function onSubmit() {
   attempted.value = true
-  if (nameError.value || personaError.value) return
+  if (nameError.value || characterError.value) return
 
   emit('submit', {
-    influencerProfileId: form.influencerProfileId.trim(),
+    characterId: form.characterId.trim(),
     name: form.name.trim(),
     goal: form.goal.trim() || undefined,
     platform: form.platform,
@@ -57,15 +84,22 @@ function onSubmit() {
 <template>
   <form class="max-w-3xl space-y-5 rounded-2xl border border-white/10 bg-white/5 p-6" @submit.prevent="onSubmit">
     <div class="grid gap-5 md:grid-cols-2">
-      <label class="space-y-2 md:col-span-2">
-        <span class="text-sm font-medium text-zinc-300">Influencer persona ID</span>
-        <input
-          v-model="form.influencerProfileId"
-          class="w-full rounded-xl border border-white/10 bg-zinc-950 px-4 py-3 text-sm text-zinc-100 outline-none transition focus:border-violet-400"
-          placeholder="UUID from a persona profile"
+      <div class="space-y-2 md:col-span-2">
+        <span class="text-sm font-medium text-zinc-300">Character</span>
+        <div v-if="characterId" class="rounded-xl border border-white/10 bg-zinc-950 px-4 py-3 text-sm text-zinc-400">
+          {{ loadingCharacters ? 'Loading…' : selectedCharacterName }}
+        </div>
+        <select
+          v-else
+          v-model="form.characterId"
+          class="w-full rounded-xl border border-white/10 bg-zinc-950 px-4 py-3 text-sm text-zinc-100 outline-none focus:border-violet-400"
+          :disabled="loadingCharacters"
         >
-        <span v-if="personaError" class="text-xs text-red-300">{{ personaError }}</span>
-      </label>
+          <option value="" disabled>{{ loadingCharacters ? 'Loading characters…' : 'Select a character' }}</option>
+          <option v-for="char in characters" :key="char.id" :value="char.id">{{ char.name }}</option>
+        </select>
+        <span v-if="characterError" class="text-xs text-red-300">{{ characterError }}</span>
+      </div>
 
       <label class="space-y-2 md:col-span-2">
         <span class="text-sm font-medium text-zinc-300">Campaign name</span>

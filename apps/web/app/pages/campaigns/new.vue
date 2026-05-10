@@ -1,8 +1,11 @@
 <script setup lang="ts">
+const route = useRoute()
 const router = useRouter()
 const api = useApi()
 const submitting = shallowRef(false)
 const error = shallowRef('')
+
+const characterId = route.query.characterId as string | undefined
 
 async function onSubmit(values: Record<string, unknown>) {
   submitting.value = true
@@ -29,13 +32,13 @@ async function onSubmit(values: Record<string, unknown>) {
     <div>
       <p class="text-sm uppercase tracking-[0.3em] text-violet-300">Campaign brief</p>
       <h1 class="mt-2 text-3xl font-bold">Create Campaign</h1>
-      <p class="mt-2 max-w-2xl text-zinc-400">Plan content around a persona, platform, and production goal.</p>
+      <p class="mt-2 max-w-2xl text-zinc-400">Plan content around a character, platform, and production goal.</p>
     </div>
 
     <div v-if="error" class="rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
       {{ error }}
     </div>
 
-    <CampaignForm submit-label="Create campaign" :submitting="submitting" @submit="onSubmit" />
+    <CampaignForm :character-id="characterId" submit-label="Create campaign" :submitting="submitting" @submit="onSubmit" />
   </section>
 </template>
