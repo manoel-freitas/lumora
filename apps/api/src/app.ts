@@ -7,7 +7,6 @@ import { logger } from 'hono/logger'
 import { authRouter } from './modules/auth/auth.routes'
 import { workspacesRouter } from './modules/workspaces/workspace.routes'
 import { charactersRouter } from './modules/characters/character.routes'
-import { personasRouter } from './modules/personas/persona.routes'
 import { campaignsRouter } from './modules/campaigns/campaign.routes'
 import { contentIdeasRouter } from './modules/content-ideas/content-idea.routes'
 import { contentAssetsRouter } from './modules/content-assets/content-asset.routes'
@@ -47,7 +46,6 @@ for (const path of ['/workspaces']) {
 
 for (const path of [
   '/characters',
-  '/personas',
   '/campaigns',
   '/content-ideas',
   '/assets',
@@ -67,7 +65,6 @@ for (const path of [
 
 app.route('/workspaces', workspacesRouter)
 app.route('/characters', charactersRouter)
-app.route('/personas', personasRouter)
 app.route('/campaigns', campaignsRouter)
 app.route('/content-ideas', contentIdeasRouter)
 app.route('/assets', contentAssetsRouter)

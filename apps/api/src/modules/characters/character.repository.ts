@@ -27,7 +27,26 @@ export async function createCharacter(workspaceId: string, data: CreateCharacter
 
 export async function updateCharacter(workspaceId: string, id: string, data: UpdateCharacterInput) {
   const [character] = await db.update(characters)
-    .set({ ...data, updatedAt: new Date() })
+    .set({
+      name: data.name,
+      description: data.description,
+      triggerWord: data.triggerWord,
+      isAdult: data.isAdult,
+      displayName: data.displayName,
+      niche: data.niche,
+      audience: data.audience,
+      backstory: data.backstory,
+      personalityTraits: data.personalityTraits,
+      toneOfVoice: data.toneOfVoice,
+      languages: data.languages,
+      contentPillars: data.contentPillars,
+      visualStyle: data.visualStyle,
+      boundaries: data.boundaries,
+      sfwPolicy: data.sfwPolicy,
+      nsfwPolicy: data.nsfwPolicy,
+      disclosureNote: data.disclosureNote,
+      updatedAt: new Date(),
+    })
     .where(and(eq(characters.workspaceId, workspaceId), eq(characters.id, id)))
     .returning()
   return character || null
