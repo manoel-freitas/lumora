@@ -15,6 +15,7 @@ type PersonaInput = {
   sfwPolicy?: string | null
   nsfwPolicy?: string | null
   disclosureNote?: string | null
+  [key: string]: unknown
 }
 
 const props = withDefaults(defineProps<{
