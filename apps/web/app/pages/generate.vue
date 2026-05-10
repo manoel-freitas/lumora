@@ -1,23 +1,47 @@
 <script setup lang="ts">
+const api = useApi()
 const generations = useGenerations()
+const characters = useCharacters()
 
 const form = reactive({
   type: 'image' as string,
   platform: 'instagram' as string,
   contentRating: 'sfw' as string,
   prompt: '',
-  characterId: '',
   width: undefined as number | undefined,
   height: undefined as number | undefined,
 })
+
+const characterList = ref<any[]>([])
+const selectedCharacterId = ref('')
+const selectedPersona = ref<any>(null)
 
 const status = ref<'idle' | 'submitting' | 'polling' | 'complete' | 'error'>('idle')
 const generationId = ref('')
 const result = ref<any>(null)
 const errorMsg = ref('')
 
+const canSubmit = computed(
+  () => !!selectedCharacterId.value && !!form.prompt.trim() && status.value !== 'submitting' && status.value !== 'polling',
+)
+
+onMounted(async () => {
+  const res = await characters.list() as any
+  characterList.value = res?.items ?? []
+})
+
+async function onCharacterSelect(id: string) {
+  selectedCharacterId.value = id
+  if (!id) {
+    selectedPersona.value = null
+    return
+  }
+  const res = await api.get<{ persona: any }>(`/api/characters/${id}/persona`)
+  selectedPersona.value = res?.persona ?? null
+}
+
 async function submit() {
-  if (!form.prompt.trim()) return
+  if (!canSubmit.value) return
 
   status.value = 'submitting'
   errorMsg.value = ''
@@ -29,8 +53,8 @@ async function submit() {
       platform: form.platform,
       contentRating: form.contentRating,
       prompt: form.prompt.trim(),
+      characterId: selectedCharacterId.value,
     }
-    if (form.characterId) body.characterId = form.characterId
     if (form.width) body.width = form.width
     if (form.height) body.height = form.height
 
@@ -54,6 +78,26 @@ async function submit() {
     <h1 class="text-3xl font-bold">Generate</h1>
 
     <form class="space-y-4" @submit.prevent="submit">
+      <!-- Character (required) -->
+      <div>
+        <label class="mb-1 block text-sm text-zinc-400">Character <span class="text-red-400">*</span></label>
+        <select
+          :value="selectedCharacterId"
+          class="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-zinc-200 outline-none focus:border-violet-500"
+          @change="onCharacterSelect(($event.target as HTMLSelectElement).value)"
+        >
+          <option disabled value="">Select a character…</option>
+          <option v-for="c in characterList" :key="c.id" :value="c.id">{{ c.name }}</option>
+        </select>
+
+        <!-- Persona hints -->
+        <div v-if="selectedPersona" class="mt-2 rounded-lg border border-white/10 bg-white/5 p-3 text-sm">
+          <p v-if="selectedPersona.niche" class="text-zinc-400">Nicho: <span class="text-zinc-200">{{ selectedPersona.niche }}</span></p>
+          <p v-if="selectedPersona.toneOfVoice" class="text-zinc-400">Tom: <span class="text-zinc-200">{{ selectedPersona.toneOfVoice }}</span></p>
+          <p v-if="selectedPersona.contentPillars?.length" class="text-zinc-400">Pilares: <span class="text-zinc-200">{{ selectedPersona.contentPillars.join(', ') }}</span></p>
+        </div>
+      </div>
+
       <!-- Type -->
       <div>
         <label class="mb-1 block text-sm text-zinc-400">Type</label>
@@ -104,17 +148,6 @@ async function submit() {
         />
       </div>
 
-      <!-- Character ID (optional) -->
-      <div>
-        <label class="mb-1 block text-sm text-zinc-400">Character ID <span class="text-zinc-600">(optional)</span></label>
-        <input
-          v-model="form.characterId"
-          type="text"
-          class="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-zinc-200 outline-none focus:border-violet-500"
-          placeholder="Leave empty for default"
-        />
-      </div>
-
       <!-- Width / Height -->
       <div class="grid grid-cols-2 gap-4">
         <div>
@@ -140,7 +173,7 @@ async function submit() {
       <!-- Submit -->
       <button
         type="submit"
-        :disabled="status === 'submitting' || status === 'polling' || !form.prompt.trim()"
+        :disabled="!canSubmit"
         class="rounded-full bg-violet-500 px-6 py-2.5 font-semibold text-white transition-colors hover:bg-violet-400 disabled:opacity-40 disabled:cursor-not-allowed"
       >
         <span v-if="status === 'submitting'">Submitting...</span>
