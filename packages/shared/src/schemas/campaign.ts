@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { contentRatingSchema, platformSchema } from './common'
 
 export const createCampaignSchema = z.object({
-  influencerProfileId: z.string().uuid(),
+  characterId: z.string().uuid(),
   name: z.string().min(1).max(255),
   goal: z.string().optional(),
   platform: platformSchema,

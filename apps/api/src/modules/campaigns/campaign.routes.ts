@@ -4,25 +4,28 @@ import type { AppEnv } from '../../infra/auth'
 import { notFound, parseJson } from '../../infra/http'
 import { createGeneration } from '../generations/generation.service'
 import {
+  characterBelongsToWorkspace,
   createCampaign,
   createCampaignIdea,
   deleteCampaign,
   findCampaign,
   listCampaigns,
-  personaBelongsToWorkspace,
   updateCampaign,
 } from './campaign.repository'
 
 export const campaignsRouter = new Hono<AppEnv>()
 
-campaignsRouter.get('/', async (c) => c.json({ items: await listCampaigns(c.get('workspaceId')) }))
+campaignsRouter.get('/', async (c) => {
+  const characterId = c.req.query('characterId')
+  return c.json({ items: await listCampaigns(c.get('workspaceId'), characterId) })
+})
 
 campaignsRouter.post('/', async (c) => {
   const input = await parseJson(c, createCampaignSchema)
   if (input instanceof Response) return input
 
-  const personaExists = await personaBelongsToWorkspace(c.get('workspaceId'), input.influencerProfileId)
-  if (!personaExists) return notFound(c, 'Persona')
+  const characterExists = await characterBelongsToWorkspace(c.get('workspaceId'), input.characterId)
+  if (!characterExists) return notFound(c, 'Character')
 
   return c.json(await createCampaign(c.get('workspaceId'), input), 201)
 })
@@ -37,9 +40,9 @@ campaignsRouter.put('/:id', async (c) => {
   const input = await parseJson(c, createCampaignSchema.partial())
   if (input instanceof Response) return input
 
-  if (input.influencerProfileId) {
-    const personaExists = await personaBelongsToWorkspace(c.get('workspaceId'), input.influencerProfileId)
-    if (!personaExists) return notFound(c, 'Persona')
+  if (input.characterId) {
+    const characterExists = await characterBelongsToWorkspace(c.get('workspaceId'), input.characterId)
+    if (!characterExists) return notFound(c, 'Character')
   }
 
   const campaign = await updateCampaign(c.get('workspaceId'), c.req.param('id'), input)
@@ -92,7 +95,7 @@ campaignsRouter.post('/:id/generate-assets', async (c) => {
     type: baseInput.type || 'image',
     platform: baseInput.platform || campaign.platform,
     contentRating: baseInput.contentRating || campaign.contentRating,
-    influencerProfileId: campaign.influencerProfileId,
+    characterId: campaign.characterId,
     campaignId: campaign.id,
     promptTemplateId: baseInput.promptTemplateId,
     templateVariables: baseInput.templateVariables,
