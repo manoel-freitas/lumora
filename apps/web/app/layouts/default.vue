@@ -6,7 +6,6 @@ const navItems = [
   { to: '/gallery', label: 'Gallery' },
   { to: '/characters', label: 'Characters' },
   { to: '/generate', label: 'Generate' },
-  { to: '/campaigns', label: 'Campaigns' },
   { to: '/approvals', label: 'Approvals' },
   { to: '/calendar', label: 'Calendar' },
 ]
