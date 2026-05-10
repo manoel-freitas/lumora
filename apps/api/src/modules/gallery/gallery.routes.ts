@@ -9,7 +9,6 @@ const galleryQuerySchema = z.object({
   page: z.coerce.number().int().min(1).optional(),
   limit: z.coerce.number().int().min(1).max(100).optional(),
   characterId: z.string().uuid().optional(),
-  influencerProfileId: z.string().uuid().optional(),
   campaignId: z.string().uuid().optional(),
   type: z.enum(['image', 'video']).optional(),
   platform: z.enum(['instagram', 'tiktok', 'x', 'youtube_shorts', 'onlyfans', 'privacy', 'other']).optional(),

@@ -1,7 +1,7 @@
 import { and, desc, eq } from 'drizzle-orm'
 import type { CreateCampaignInput, CreateContentIdeaInput, UpdateCampaignInput } from '@lumora/shared'
 import { db } from '../../infra/db'
-import { contentAssets, contentCampaigns, contentIdeas, influencerProfiles } from '../../db/schema'
+import { characters, contentAssets, contentCampaigns, contentIdeas } from '../../db/schema'
 
 export async function listCampaigns(workspaceId: string) {
   return db.query.contentCampaigns.findMany({
@@ -10,11 +10,11 @@ export async function listCampaigns(workspaceId: string) {
   })
 }
 
-export async function personaBelongsToWorkspace(workspaceId: string, influencerProfileId: string) {
-  const persona = await db.query.influencerProfiles.findFirst({
-    where: and(eq(influencerProfiles.workspaceId, workspaceId), eq(influencerProfiles.id, influencerProfileId)),
+export async function characterBelongsToWorkspace(workspaceId: string, characterId: string) {
+  const character = await db.query.characters.findFirst({
+    where: and(eq(characters.workspaceId, workspaceId), eq(characters.id, characterId)),
   })
-  return Boolean(persona)
+  return Boolean(character)
 }
 
 export async function findCampaign(workspaceId: string, id: string) {
@@ -38,7 +38,7 @@ export async function findCampaign(workspaceId: string, id: string) {
 }
 
 type CampaignWrite = CreateCampaignInput | {
-  influencerProfileId: string
+  characterId: string
   name: string
   goal?: string
   platform: CreateCampaignInput['platform']
@@ -59,7 +59,7 @@ type IdeaWrite = CreateContentIdeaInput | {
 export async function createCampaign(workspaceId: string, data: CampaignWrite) {
   const [campaign] = await db.insert(contentCampaigns).values({
     workspaceId,
-    influencerProfileId: data.influencerProfileId,
+    characterId: data.characterId,
     name: data.name,
     goal: data.goal,
     platform: data.platform,
@@ -73,7 +73,7 @@ export async function createCampaign(workspaceId: string, data: CampaignWrite) {
 export async function updateCampaign(workspaceId: string, id: string, data: UpdateCampaignInput) {
   const [campaign] = await db.update(contentCampaigns)
     .set({
-      influencerProfileId: data.influencerProfileId,
+      characterId: data.characterId,
       name: data.name,
       goal: data.goal,
       platform: data.platform,

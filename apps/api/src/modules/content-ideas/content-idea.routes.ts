@@ -45,7 +45,6 @@ contentIdeasRouter.post('/:id/generate', async (c) => {
     type: baseInput.type || 'image',
     platform: baseInput.platform || idea.platform,
     contentRating: baseInput.contentRating || campaign.contentRating,
-    influencerProfileId: campaign.influencerProfileId,
     campaignId: campaign.id,
     promptTemplateId: baseInput.promptTemplateId,
     templateVariables: baseInput.templateVariables,

@@ -8,7 +8,6 @@ export const createGenerationSchema = z.object({
   platform: platformSchema.default('instagram'),
   contentRating: contentRatingSchema.default('sfw'),
   characterId: z.string().uuid().optional(),
-  influencerProfileId: z.string().uuid().optional(),
   campaignId: z.string().uuid().optional(),
   promptTemplateId: z.string().uuid().optional(),
   templateVariables: z.record(z.any()).optional(),

@@ -54,7 +54,6 @@ generationsRouter.post('/:id/regenerate', async (c) => {
       platform: generation.platform,
       contentRating: generation.contentRating,
       characterId: generation.characterId || undefined,
-      influencerProfileId: generation.influencerProfileId || undefined,
       campaignId: generation.campaignId || undefined,
       promptTemplateId: generation.promptTemplateId || undefined,
       templateVariables: {},
