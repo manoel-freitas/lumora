@@ -1,7 +1,7 @@
 import { and, desc, eq } from 'drizzle-orm'
 import type { CreateGenerationInput } from '@lumora/shared'
 import { db } from '../../infra/db'
-import { characterPhotos, characters, generations, influencerProfiles, workspaces } from '../../db/schema'
+import { characterPhotos, characters, generations, workspaces } from '../../db/schema'
 
 export async function listGenerations(workspaceId: string) {
   return db.query.generations.findMany({
@@ -33,12 +33,6 @@ export async function findCharacter(workspaceId: string, characterId: string) {
   })
 }
 
-export async function findPersona(workspaceId: string, personaId: string) {
-  return db.query.influencerProfiles.findFirst({
-    where: and(eq(influencerProfiles.workspaceId, workspaceId), eq(influencerProfiles.id, personaId)),
-  })
-}
-
 export async function findPrimaryCharacterPhoto(workspaceId: string, characterId: string) {
   return db.query.characterPhotos.findFirst({
     where: and(
@@ -57,7 +51,6 @@ export async function insertGeneration(workspaceId: string, data: CreateGenerati
   const [generation] = await db.insert(generations).values({
     workspaceId,
     characterId: data.characterId,
-    influencerProfileId: data.influencerProfileId,
     campaignId: data.campaignId,
     promptTemplateId: data.promptTemplateId,
     type: data.type,

@@ -7,7 +7,6 @@ import { renderPromptTemplate } from '../prompt-templates/prompt-template.servic
 import {
   findCharacter,
   findGenerationByIdempotencyKey,
-  findPersona,
   findPrimaryCharacterPhoto,
   getWorkspace,
   insertGeneration,
@@ -34,11 +33,6 @@ export async function createGeneration(workspaceId: string, data: CreateGenerati
   if (data.characterId) {
     const character = await findCharacter(workspaceId, data.characterId)
     if (!character) throw new Error('Character not found')
-  }
-
-  if (data.influencerProfileId) {
-    const persona = await findPersona(workspaceId, data.influencerProfileId)
-    if (!persona) throw new Error('Persona not found')
   }
 
   let finalPrompt = data.prompt
